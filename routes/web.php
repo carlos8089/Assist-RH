@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -10,11 +9,20 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+/*
+-------------------------
+code initial laravel
+-------------------------
 
 Route::get('/', function () {
     return view('welcome');
 });
-
+*/
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+//mes routes
+Route::get('/', 'WelcomeController@index');
+
+Route::get('/', 'vueController@show' );
