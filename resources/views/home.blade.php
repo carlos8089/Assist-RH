@@ -1,7 +1,6 @@
-@extends('navigation')
+@extends('base')
 
-
-<!-- /*
-@section('content')
-
-@endsection */ -->
+@section('contenu')
+    @extends('navigation')
+    @extends('layouts.app')
+@endsection 

@@ -1,4 +1,4 @@
-const mix = require('laravel-mix');
+let mix = require('laravel-mix');
 
 /*
  |--------------------------------------------------------------------------
@@ -11,6 +11,11 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css')
-    .styles('ressources/css/navigation.css', 'public/css/nav.css');
+mix.styles([
+        'resources/assets/css/bootstrap.css',
+        'resources/assets/css/home.css'
+    ], 'public/css/app.css')
+    .scripts([
+        'resources/assets/js/jquery-3.4.1.js',
+        'resources/assets/js/bootstrap.bundle.js'
+    ], 'public/js/app.js');
