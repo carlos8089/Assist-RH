@@ -21,6 +21,9 @@
 
     @yield('contenu')
 
-    <div class="footer"> </div>
+    <div class="footer"> 
+        @copyright COOPECFI 2019
+
+    </div>
 </body>
 </html>

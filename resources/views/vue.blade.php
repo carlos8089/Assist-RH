@@ -1,7 +1,7 @@
 @extends('base')
 @section('contenu')
-<link rel="stylesheet" href="../../public/css/vue.css">
-<div class="container">
+
+<div class="container connexion-home">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
