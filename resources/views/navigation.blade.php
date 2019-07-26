@@ -1,26 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <script src="{{ asset('js/app.js') }}"></script>
-  <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-  
+<style>
+div.navigation{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.navigation ul {
+
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 15%;
+  background-color: #f1f1f1;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+.navigation li a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.navigation li a.active {
+  background-color: #4CAF50;
+ /* color: white;  */
+}
+
+.navigation li a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+</style>
 </head>
 <body>
-  <div class="conteneur-navigation">
-    <ul class="nav flex-column">
-      <li class="nav-item">
-        <a class="nav-link" href="#">Paie</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
+<div class="navigation">
+  <ul>
+    <li><a class="active" href="#home">Home</a></li>
+    <li><a href="#news">News</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#about">About</a></li>
+  </ul>
+</div>
 
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
-      </li>
-    </ul>
-  </div>
-  
+
+
+
 </body>
 </html>
