@@ -1,6 +1,16 @@
-@extends('base')
+@extends('layouts.app')
 
-@section('contenu')
+@section('content')
+    @extends('base')
+
     @extends('navigation')
-    @extends('layouts.app')
-@endsection 
+    @section('contenu')
+       
+    @endsection
+@endsection
+
+
+    
+
+
+

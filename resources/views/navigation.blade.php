@@ -2,8 +2,17 @@
 <html>
 <head>
 <style>
-div.navigation{
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+/*                                       styles for vertical nav                               */
+
+.navigation{
+  margin: 30px;
+  float: left;
+  width: 20%;
+  height: 700px;
+  border-radius: 5%, 5%;;
+  box-shadow: 0 4px 3px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: #4CAF50;
 }
 
 .navigation ul {
@@ -11,9 +20,8 @@ div.navigation{
   list-style-type: none;
   margin: 0;
   padding: 0;
-  width: 15%;
   background-color: #f1f1f1;
-  position: fixed;
+  position: static;
   height: 100%;
   overflow: auto;
 }
@@ -27,26 +35,37 @@ div.navigation{
 
 .navigation li a.active {
   background-color: #4CAF50;
- /* color: white;  */
+ /color: white;  
 }
 
 .navigation li a:hover:not(.active) {
-  background-color: #555;
+  background-color: gray;
   color: white;
 }
+
+/*                         styles for main container page                           */
+
+.main{
+  float: left;
+  margin: 30px;
+  width: 50%;
+  background-color: #f1f1f1;
+  padding: 50px;
+}
+
 </style>
 </head>
 <body>
-<div class="navigation">
-  <ul>
-    <li><a class="active" href="#home">Home</a></li>
-    <li><a href="#news">News</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#about">About</a></li>
-  </ul>
+<div >
+    <div class="navigation">
+        <ul>
+          <li><a class="active" href="#home">Home</a></li>
+          <li><a href="#news">News</a></li>
+        </ul>
+    </div>
+    @yield('contenu')
+     
 </div>
-
-
 
 
 </body>
