@@ -45,13 +45,7 @@
 
 /*                         styles for main container page                           */
 
-.main{
-  float: left;
-  margin: 30px;
-  width: 50%;
-  background-color: #f1f1f1;
-  padding: 50px;
-}
+
 
 </style>
 </head>
@@ -59,8 +53,8 @@
 <div >
     <div class="navigation">
         <ul>
-          <li><a class="active" href="#home">Home</a></li>
-          <li><a href="#news">News</a></li>
+        <li><a href="">Home</a></li>
+          <li><a href="{{route('fiche')}}">News</a></li>
         </ul>
     </div>
     @yield('contenu')

@@ -31,6 +31,23 @@
         </ul>
     </div>
 </nav>
+
+<footer>
+        <style>
+            footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: rgb(119, 119, 119);
+            text-align: center;
+            color: rgb(253, 253, 253);
+        }
+        </style>
+        @copyright COOPECFI 2019
+        
+</footer>
+
 @yield('content')
 <script src="{{ asset('js/app.js') }}"></script>
 @yield('script')
