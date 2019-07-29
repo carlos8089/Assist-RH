@@ -8,6 +8,6 @@ class vueController extends Controller
 {
     //
     public function show(){
-            return view('pages/vue');   
+            return view('pages.vue');   
     }
 }

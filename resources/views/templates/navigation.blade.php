@@ -53,8 +53,12 @@
 <div >
     <div class="navigation">
         <ul>
-        <li><a href="">Home</a></li>
-          <li><a href="{{route('fiche')}}">News</a></li>
+        <li><a href="{{route('home')}}">Accueil</a></li>
+        <li><a href="{{route('fiche')}}">Gérer la paie</a></li>
+        <li><a href="">Gérer le personnel</a></li>
+        <li><a href="">Paramètres</a></li>
+        <li><a href="">Mon profil</a></li>
+        <li><a href="">aide</a></li>
         </ul>
     </div>
     @yield('contenu')

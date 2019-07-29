@@ -1,6 +1,3 @@
-@extends('templates.base')
-
-@section('cont')
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -91,6 +88,4 @@
         </div>
     </div>
 </div>
-
-@endsection
 
