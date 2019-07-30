@@ -16,6 +16,7 @@
 <div class="main">
         
         <H2>@yield('titre')</H2>
+        <p></p>
 
         <div>
             @yield('contenu')

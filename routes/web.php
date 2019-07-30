@@ -13,7 +13,7 @@
 -------------------------
 code initial laravel
 -------------------------
-
+Route::get('/', 'WelcomeController@index');
 Route::get('/', function () {
     return view('welcome');
 });
@@ -23,7 +23,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 //mes routes
-/*Route::get('/', 'WelcomeController@index');*/
 
 Route::get('/', 'vueController@show' );
 Route::get('/fiche', 'ficheController@show')->name('fiche');
+Route::get('/personnel', 'personnelController@show')->name('personnel');
+Route::get('/parametres', 'parametresController@show')->name('parametres');
+

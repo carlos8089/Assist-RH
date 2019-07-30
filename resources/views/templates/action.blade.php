@@ -12,5 +12,5 @@
 <div class="action">
     <button disabled="disabled">Imprimer</button>
     <button disabled="disabled">Editer</button>
-    <button disabled="disabled">hgsg</button>
+    
 </div>
