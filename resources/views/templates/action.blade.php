@@ -1,16 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
 <style>
-.action{
-        
-        float: right;
-        margin-top: 30px;
-        width: 20%;
-        background-color: #f1f1f1;
-        padding: 30px;
 
-    }
+/*                                       styles for vertical nav                               */
+
+.action{
+  width:10%;
+  text-align: center;
+  float: right;
+  margin: 30px;
+  box-shadow: 0 4px 3px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: #4CAF50;
+  position: static;
+  overflow: auto;
+}
+#Imprimer{
+    width: 100%;
+}
+
+
+
 </style>
-<div class="action">
-    <button disabled="disabled">Imprimer</button>
-    <button disabled="disabled">Editer</button>
-    
+</head>
+<body>
+<div >
+    <div class="action">
+        <input type="button" value="Imprimer" id="Imprimer">
+    </div>
+    @yield('contenu')
+     
 </div>
+
+
+</body>
+</html>

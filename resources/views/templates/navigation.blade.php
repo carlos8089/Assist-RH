@@ -61,7 +61,7 @@
         <li><a href="">aide</a></li>
         </ul>
     </div>
-    @yield('contenu')
+    
      
 </div>
 
