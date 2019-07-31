@@ -57,7 +57,7 @@
         <li><a href="{{route('fiche')}}">Gérer la paie</a></li>
         <li><a href="{{route('personnel')}}">Gérer le personnel</a></li>
         <li><a href="{{route('parametres')}}">Paramètres</a></li>
-        <li><a href="">Mon profil</a></li>
+        <li><a href="{{route('profil')}}">Mon profil</a></li>
         <li><a href="">aide</a></li>
         </ul>
     </div>

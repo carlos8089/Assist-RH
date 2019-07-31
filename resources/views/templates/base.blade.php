@@ -3,17 +3,25 @@
     <style>
         .elementsTri{
             float: left;
-            width: 60%;
             margin: 10px;
+            background-color: brown;
+        }
+        #element1{
+            margin-top: 30px;
+            width: 60%;
+        }
+        #element2{
+            margin-top: 30px;
+            width: 10%;
         }
     </style>
     <div class="elementsTri">
         @extends('templates.navigation')   
     </div>
-    <div class="elementsTri">
+    <div class="elementsTri" id="element1">
         @yield('element1')
     </div>
-    <div class="elementsTri">
+    <div class="elementsTri" id="element2">
         @yield('element2')
     </div>
     

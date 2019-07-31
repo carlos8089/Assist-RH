@@ -28,4 +28,5 @@ Route::get('/', 'vueController@show' );
 Route::get('/fiche', 'ficheController@show')->name('fiche');
 Route::get('/personnel', 'personnelController@show')->name('personnel');
 Route::get('/parametres', 'parametresController@show')->name('parametres');
+Route::get('/profil', 'profilController@show')->name('profil');
 

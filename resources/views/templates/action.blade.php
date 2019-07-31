@@ -26,7 +26,7 @@
 <body>
 <div >
     <div class="action">
-        <input type="button" value="Imprimer" id="Imprimer">
+        <input type="button" value="Imprimer" id="Imprimer" class="btn btn-primary">
     </div>
     @yield('contenu')
      

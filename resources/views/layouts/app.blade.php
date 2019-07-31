@@ -39,7 +39,7 @@
             left: 0;
             bottom: 0;
             width: 100%;
-            background-color: rgb(119, 119, 119);
+            background-color: #1a1a1a;
             text-align: center;
             color: rgb(253, 253, 253);
         }

@@ -1,14 +1,14 @@
 @extends('templates.base')
 @section('element1')
 <style>
-        .main{
+        .principal{
             padding: 20px;
             background-color: #f1f1f1;
             overflow: auto;
             
         }
     </style>
-    <div class="main">
+        <div class="principal">
             
             <H2>Gérer la paie des salariés</H2>
             <p>pijepzpjpmfjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjghvujfguy
@@ -55,9 +55,11 @@
                 uggggggggggggggggggggggggggggggggggggg
                 ihoooooooooooooooooooooooooooooooooooooooooooooooooooooooo
                 
-            </p>  
+            </p> 
+        </div> 
 @endsection
+
 @section('element2')
-    @extends('templates.action')
+    <button disabled="disabled">jhdsluih</button>
 
 @endsection

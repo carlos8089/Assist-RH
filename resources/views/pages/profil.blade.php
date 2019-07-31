@@ -29,8 +29,7 @@
             <input type="button" value="Liste des salariés" id="liste" class="btn btn-primary">
             <div>
                     <style>
-                            
-                            
+                           
                             /* Style the tab */
                             .tab {
                                 overflow: hidden;
@@ -75,9 +74,7 @@
                             
                             <div class="tab">
                               <button class="tablinks" onclick="openCity(event, 'Civilite')" id="defaultOpen"><strong>Civilités</strong></button>
-                              <button class="tablinks" onclick="openCity(event, 'Emploi')"><strong>Emploi</strong> </button>
-                              <button class="tablinks" onclick="openCity(event, 'Donnee')"> <strong>Données bancaires</strong> </button>
-                              <button class="tablinks" onclick="openCity(event, 'CV')"><strong>Curriculum Vitae</strong> </button>
+                              <button class="tablinks" onclick="openCity(event, 'CV')"><strong>Curiculum Vitae</strong> </button>
                             </div>
                             
                             <div id="Civilite" class="tabcontent">
@@ -95,19 +92,7 @@
                                 </section>
                             </div>
                             
-                            <div id="Emploi" class="tabcontent">
-                                <section>
-                                    <h4></h4>
-                                    <label for="">Poste</label><input type="text" name="" id="">
-                                    <label for="">Durée du contrat</label><input type="text" name="" id="">
-                                    
-                                </section>
-                            </div>
                             
-                            <div id="Donnee" class="tabcontent">
-                              <h3>Donnee</h3>
-                              <p>Donnee is the capital of Japan.</p>
-                            </div>
 
                             <div id="CV" class="tabcontent">
                                 jhvuivujggui

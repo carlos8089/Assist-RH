@@ -11,7 +11,7 @@
         
     }
 </style>
-<div class="main">
+<div class="main align-content-*-center">
         
         <H2>@yield('titre')</H2>
         <p>pijepzpjpmfjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjghvujfguy

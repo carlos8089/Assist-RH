@@ -4,60 +4,16 @@
         .main{
             padding: 20px;
             background-color: #f1f1f1;
-            overflow: auto;
-            
+            overflow: auto;    
         }
     </style>
     <div class="main">
             
-            <H2>@yield('titre')</H2>
+            <H2>Adaptez Assist-RH à vos besoins</H2>
             <p>pijepzpjpmfjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjghvujfguy
-                uggggggggggggggggggggggggggggggggggggg
-                ihoooooooooooooooooooooooooooooooooooooooooooooooooooooooo
-                ugugugugugugugugugugugugugugugugugugugugugugugugugugugugpijepzpjpmfjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjghvujfguy
-                uggggggggggggggggggggggggggggggggggggg
-                ihoooooooooooooooooooooooooooooooooooooooooooooooooooooooo
-                ugugugugugugugugugugugugugugugugugugugugugugugugugugugugpijepzpjpmfjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjghvujfguy
-                uggggggggggggggggggggggggggggggggggggg
-                ihoooooooooooooooooooooooooooooooooooooooooooooooooooooooo
-                ugugugugugugugugugugugugugugugugugugugugugugugugugugugugpijepzpjpmfjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjghvujfguy
-                uggggggggggggggggggggggggggggggggggggg
-                ihoooooooooooooooooooooooooooooooooooooooooooooooooooooooo
-                ugugugugugugugugugugugugugugugugugugugugugugugugugugugugpijepzpjpmfjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjghvujfguy
-                uggggggggggggggggggggggggggggggggggggg
-                ihoooooooooooooooooooooooooooooooooooooooooooooooooooooooo
-                ugugugugugugugugugugugugugugugugugugugugugugugugugugugugpijepzpjpmfjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjghvujfguy
-                uggggggggggggggggggggggggggggggggggggg
-                ihoooooooooooooooooooooooooooooooooooooooooooooooooooooooo
-                ugugugugugugugugugugugugugugugugugugugugugugugugugugugugpijepzpjpmfjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjghvujfguy
-                uggggggggggggggggggggggggggggggggggggg
-                ihoooooooooooooooooooooooooooooooooooooooooooooooooooooooo
-                ugugugugugugugugugugugugugugugugugugugugugugugugugugugugpijepzpjpmfjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjghvujfguy
-                uggggggggggggggggggggggggggggggggggggg
-                ihoooooooooooooooooooooooooooooooooooooooooooooooooooooooo
-                ugugugugugugugugugugugugugugugugugugugugugugugugugugugug
-                ugugugugugugugugugugugugugugugugugugugugugugugugugugugugpijepzpjpmfjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjghvujfguy
-                uggggggggggggggggggggggggggggggggggggg
-                ihoooooooooooooooooooooooooooooooooooooooooooooooooooooooo
-                ugugugugugugugugugugugugugugugugugugugugugugugugugugugugpijepzpjpmfjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjghvujfguy
-                uggggggggggggggggggggggggggggggggggggg
-                ihoooooooooooooooooooooooooooooooooooooooooooooooooooooooo
-                ugugugugugugugugugugugugugugugugugugugugugugugugugugugugpijepzpjpmfjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjghvujfguy
-                uggggggggggggggggggggggggggggggggggggg
-                ihoooooooooooooooooooooooooooooooooooooooooooooooooooooooo
-                ugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugugpijepzpjpmfjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjghvujfguy
-                uggggggggggggggggggggggggggggggggggggg
-                ihoooooooooooooooooooooooooooooooooooooooooooooooooooooooo
-                ugugugugugugugugugugugugugugugugugugugugugugugugugugugugpijepzpjpmfjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjghvujfguy
-                uggggggggggggggggggggggggggggggggggggg
-                ihoooooooooooooooooooooooooooooooooooooooooooooooooooooooo
-                ugugugugugugugugugugugugugugugugugugugugugugugugugugugugpijepzpjpmfjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjghvujfguy
-                uggggggggggggggggggggggggggggggggggggg
-                ihoooooooooooooooooooooooooooooooooooooooooooooooooooooooo
-                
+               
             </p>  
 @endsection
 @section('element2')
-    @extends('templates.action')
-
+   @extends('templates.action')
 @endsection
