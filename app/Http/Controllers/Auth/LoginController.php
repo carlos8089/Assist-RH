@@ -27,6 +27,16 @@ class LoginController extends Controller
      */
     protected $redirectTo = '/home';
 
+    /*
+    |-------------------------------------------
+    | Surcharge de la methode username()
+    |-------------------------------------------
+    */
+    public function username()
+    {
+        return 'name' ;
+    }
+
     /**
      * Create a new controller instance.
      *

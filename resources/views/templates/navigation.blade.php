@@ -53,11 +53,10 @@
 <div >
     <div class="navigation">
         <ul>
-        <li><a href="{{route('home')}}">Accueil</a></li>
+        <li><a href="{{route('welcome')}}">Accueil</a></li>
         <li><a href="{{route('fiche')}}">Gérer la paie</a></li>
         <li><a href="{{route('personnel')}}">Gérer le personnel</a></li>
         <li><a href="{{route('parametres')}}">Paramètres</a></li>
-        <li><a href="{{route('profil')}}">Mon profil</a></li>
         <li><a href="">aide</a></li>
         </ul>
     </div>

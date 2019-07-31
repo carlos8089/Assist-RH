@@ -13,7 +13,10 @@
 -------------------------
 code initial laravel
 -------------------------
-Route::get('/', 'WelcomeController@index');
+*/
+
+Route::get('/welcome', 'WelcomeController@index')->name('welcome');
+/*
 Route::get('/', function () {
     return view('welcome');
 });

@@ -10,7 +10,7 @@
     @yield('css')
 </head>
 <body>
-<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-success">
     <a class="navbar-brand" href="{{ route('home') }}">{{ config('app.name', 'Assist-RH') }}</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -21,25 +21,41 @@
                 <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">@lang('Connexion')</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ route('register') }}">@lang('Inscription')</a></li>
             @else
-                <li class="nav-item">
-                    <a id="logout" class="nav-link" href="{{ route('logout') }}">@lang('Déconnexion')</a>
+            <li class="nav-item dropdown">
+                
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        {{ Auth::user()->name }} <span class="caret"></span>
+                    </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                    <style>
+                        #logout{
+                            text-align: center;
+                        }
+                        #profile{
+                            text-align: center;
+                        }
+                    </style>
+                    <a id="profile" class="nav-link text-secondary" href="{{ route('profil') }}">@lang('<strong>Mon profil</strong>')</a>
+                    <a id="logout" class="nav-link text-danger" href="{{ route('logout') }}">@lang('<strong>Déconnexion</strong>')</a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hide">
                         {{ csrf_field() }}
                     </form>
-                </li>
+                    
+                </div>
+            </li>
             @endguest
         </ul>
     </div>
 </nav>
 
-<footer>
+<footer class="bg-light text-primary">
         <style>
             footer {
             position: fixed;
             left: 0;
             bottom: 0;
             width: 100%;
-            background-color: #1a1a1a;
+           
             text-align: center;
             color: rgb(253, 253, 253);
         }

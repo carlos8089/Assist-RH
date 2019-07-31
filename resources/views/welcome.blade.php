@@ -90,6 +90,7 @@
                 <div>
                     <h3>Votre outil 2 in 1 de gestion automatisée</h3> 
                 </div>
+                <a href="{{route('parametres')}}">cliquer ici</a>
             </div>
 
 

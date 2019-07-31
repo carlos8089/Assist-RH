@@ -23,10 +23,9 @@
     </style>
     <div class="main">
             
-            <H2>Gestion automatisée du personnel</H2>
+            <H2>Editer vos informations personnelles</H2>
 
-            <input type="button" value="Créer un nouveau salarié" id="create" class="btn btn-primary">
-            <input type="button" value="Liste des salariés" id="liste" class="btn btn-primary">
+            
             <div>
                     <style>
                            

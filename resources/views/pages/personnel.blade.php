@@ -82,11 +82,16 @@
                             
                             <div id="Civilite" class="tabcontent">
                                 <section>
+                                    <style>
+                                        .myform{
+                                            width: 35%;
+                                        }
+                                    </style>
                                     <h4>Identité</h4>
-                                    <label for="nom">Nom</label><input type="text" name="iNom" id="nom">
-                                    <label for="prenom">Prénoms</label><input type="text" name="iPrenom" id="prenom">
-                                    <label for="nais">Né(e) le</label><input type="date" name="idateNais" id="nais">
-                                    <label for="lieuNais">À</label><input type="text" name="ilieuNais" id="lieuNais">
+                                    <label for="nom" class="mr-sm-2">Nom</label><input class="form-control mb-2 mr-sm-2 myform" type="text" name="iNom" id="nom">
+                                    <label for="prenom" class="mr-sm-2">Prénoms</label><input class="form-control mb-2 mr-sm-2" type="text" name="iPrenom" id="prenom">
+                                    <label for="nais" class="mr-sm-2">Né(e) le</label><input class="form-control mb-2 mr-sm-2" type="date" name="idateNais" id="nais">
+                                    <label for="lieuNais" class="mr-sm-2">À</label><input  class="form-control mb-2 mr-sm-2" type="text" name="ilieuNais" id="lieuNais">
                                 </section>
                                 <section>
                                     <h4>Situation sociale</h4>

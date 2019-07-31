@@ -18,6 +18,7 @@ class Employe extends Migration
             $table->string('nom', 100)->nullable()->default('text');
             $table->string('prenoms', 100)->nullable()->default('text');
             
+            $table->string('sitMat', 100)->nullable()->default('text');
             $table->timestamps();
         });
     }
