@@ -11,6 +11,6 @@ class ficheController extends Controller
         $this->middleware('auth');
     }
     public function show(){
-       return view('pages.fiche');
+       return view('pages.Paie.fiche');
     }
 }

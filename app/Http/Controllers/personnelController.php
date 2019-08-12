@@ -8,6 +8,6 @@ class personnelController extends Controller
 {
     //
     public function show(){
-        return view('pages.personnel');
+        return view('pages.Personnel.personnel');
     }
 }

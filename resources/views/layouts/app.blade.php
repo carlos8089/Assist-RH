@@ -11,12 +11,19 @@
 </head>
 <body>
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-success">
-    <a class="navbar-brand" href="{{ route('home') }}">{{ config('app.name', 'Assist-RH') }}</a>
+    <a class="navbar-brand" href="{{ route('welcome') }}">{{ config('app.name', 'Assist-RH') }}</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="col-4">
+                    <form action={{route('personnel')}}>
+                        <input type="text" placeholder="nom / numero matricule" id="rechercherInput">
+                        <input type="submit" class="btn" value="Rechercher">
+                    </form>
+                </div>
         <ul class="navbar-nav ml-auto">
+            
             @guest
                 <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">@lang('Connexion')</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ route('register') }}">@lang('Inscription')</a></li>

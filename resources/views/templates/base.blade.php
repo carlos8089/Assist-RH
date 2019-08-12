@@ -4,7 +4,7 @@
         .elementsTri{
             float: left;
             margin: 10px;
-            background-color: brown;
+            background-color:#ffffff;
         }
         #element1{
             margin-top: 30px;

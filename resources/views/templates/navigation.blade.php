@@ -6,13 +6,10 @@
 /*                                       styles for vertical nav                               */
 
 .navigation{
-  margin: 30px;
+ height: 820px;
   float: left;
   width: 20%;
-  height: 700px;
-  border-radius: 5%, 5%;;
-  box-shadow: 0 4px 3px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  background-color: #4CAF50;
+  background-color: #ffffff;
 }
 
 .navigation ul {
@@ -20,7 +17,7 @@
   list-style-type: none;
   margin: 0;
   padding: 0;
-  background-color: #f1f1f1;
+  background-color: #ffffff;
   position: static;
   height: 100%;
   overflow: auto;
@@ -34,12 +31,12 @@
 }
 
 .navigation li a.active {
-  background-color: #4CAF50;
- /color: white;  
+  background-color: #ffffff;
+ color: white;  
 }
 
 .navigation li a:hover:not(.active) {
-  background-color: gray;
+  background-color: #ffd633;
   color: white;
 }
 
@@ -53,11 +50,13 @@
 <div >
     <div class="navigation">
         <ul>
-        <li><a href="{{route('welcome')}}">Accueil</a></li>
-        <li><a href="{{route('fiche')}}">Gérer la paie</a></li>
-        <li><a href="{{route('personnel')}}">Gérer le personnel</a></li>
+        <li><a href="{{route('home')}}">Accueil</a></li>
+        <li><a href="{{route('fiche')}}">Gestion de la paie</a></li>
+        <li><a href="{{route('personnel')}}">Gestion du personnel</a></li>
+        <li><a href="{{route('profils')}}">Gestion des profils</a></li>
         <li><a href="{{route('parametres')}}">Paramètres</a></li>
         <li><a href="">aide</a></li>
+
         </ul>
     </div>
     

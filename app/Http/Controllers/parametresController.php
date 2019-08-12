@@ -12,6 +12,6 @@ class parametresController extends Controller
         $this->middleware('auth');
     }
     public function show(){
-        return view('pages.parametres');
+        return view('pages.divers.parametres');
     }
 }
