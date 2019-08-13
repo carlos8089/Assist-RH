@@ -27,16 +27,21 @@
             
             <H2>Gestion automatisée du personnel</H2>
             <div class="row">
-                <div class="col-4">
+                <div class="col-3">
                 <a href="{{route('creerEmploye')}}"  class="btn btn-primary" >Créer un nouveau salarié</a>
                 </div>
-                <div class="col-4">
-                    <form action="">
-                        <input id="rechercherInput" type="text" placeholder="nom / numero matricule">
-                        <input type="submit" class="btn" value="Rechercher">
-                    </form>
+                <div class="col-6">
+                        <form action={{route('personnel')}}>
+                                <div class="row">
+                                    <div class="col-8">
+                                        <input class="form-control" type="text" placeholder="nom / numero matricule" id="rechercherInput">
+                                    </div>     
+                                    <input  type="submit" class="btn btn-warning" value="Rechercher">
+                                </div>
+                                
+                        </form>
                 </div>
-                <div class="col-4">
+                <div class="col-3">
                 <a href="{{route('listeEmploye')}}" id="liste" class="btn btn-primary">Liste des salariés</a>
                 </div>
 

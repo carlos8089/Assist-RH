@@ -12,13 +12,13 @@
         .row{
             margin-bottom: 5px;
         }
-        form{
+        .form{
             margin-bottom: 30px;
         }
     </style>
     <div class="main">
         <h3>Créer un nouveau bulletin de paie</h3>
-        <form action="" method="post">
+        <form action="" method="post" class="form">
             <form>
                 <div class="row">
                     <div class="col-4">
@@ -64,53 +64,204 @@
                         </div>
                     </div>
                 </div>
-               
-
-
             </form>
-            <label for="">Salaire de base</label>
-            <input type="number" name="" id="">
 
-            <label for="">Prime d'ancienneté</label>
-            <input type="number" name="" id="">
+            <form class="form">
+                    <div class="row">
+                            <div class="col-">
+                                    <label for="">Salaire de base</label>  
+                            </div>
+                            <div class="col-">
+                                    <input class="form-control" type="number" name="" id="">
+                            </div>
+                        </div>
+                        
+                        
+            
+                        <div class="row">
+                                <div class="col-">
+                                    <label for="">Prime d'ancienneté</label>
+                                </div>
+                                <div class="col-">
+                                    <input class="form-control" type="number" name="" id="">
+                                </div>
+                            </div>
+                        
+                        
+            
+                        <div class="row">
+                                <div class="col-">
+                                    <label for="">Prime de caisse</label>
+                                </div>
+                                <div class="col-">
+                                    <input class="form-control" type="number" name="" id="">
+                                </div>
+                            </div>
+                        
+            
+            
+                        <div class="row">
+                                <div class="col-">
+                                    <label for="">Prime de responsabilité</label>
+                                </div>
+                                <div class="col-">
+                                    <input class="form-control" type="number" name="" id="">
+                                </div>
+                            </div>
+                        
+                        
+            
+                        <div class="row">
+                                <div class="col-">
+                                    <label for="">Indemnité de logement</label>
+                                </div>
+                                <div class="col-">
+                                    <input class="form-control" type="number" name="" id="">
+                                </div>
+                            </div>
+                        
+                        
+            
+                        <div class="row">
+                                <div class="col-">
+                                    <label for="">Indemnité de représentation</label>
+                                </div>
+                                <div class="col-">
+                                    <input class="form-control" type="number" name="" id="">
+                                </div>
+                            </div>
+                        
+                        
+            
+                        <div class="row">
+                                <div class="col-">
+                                    <label for="">Prime d'habillement</label>  
+                                </div>
+                                <div class="col-">
+                                    <input class="form-control" type="number" name="" id="">
+                                </div>
+                            </div>
+                        
+                        
+            
+                        <div class="row">
+                                <div class="col-">
+                                    <label for="">Prime de déplacement</label>
+                                </div>
+                                <div class="col-">
+                                    <input class="form-control" type="number" name="" id="">
+                                </div>
+                            </div>
+                        
+                        
+            
+                        <div class="row">
+                                <div class="col-">
+                                    <label for="">Prime d'encouragement</label>
+                                </div>
+                                <div class="col-">
+                                    <input type="number" name="" id="">
+                                </div>
+                            </div>
+                        
+                        
+            
+                        <div class="row">
+                                <div class="col-">
+                                    <label for="">Prime de santé</label> 
+                                </div>
+                                <div class="col-">
+                                    <input type="number" name="" id="">
+                                </div>
+                            </div>
+                        
+                        
+            
+                        <div class="row">
+                                <div class="col-">
+                                    <label for="">Prime de terrain</label>
+                                </div>
+                                <div class="col-">
+                                    <input type="number" name="" id="">
+                                </div>
+                            </div>
+                        
+                        
+            
+                        <div class="row">
+                                <div class="col-">
+                                    <label for="">Prime de jours fériés</label> 
+                                </div>
+                                <div class="col-">
+                                    <input type="number" name="" id="">
+                                </div>
+                            </div>
+                        
+                        
+            
+                        <div class="row">
+                                <div class="col-">
+                                    <label for="">Prime semestrielle</label>
+                                </div>
+                                <div class="col-">
+                                    <input type="number" name="" id="">
+                                </div>
+                        </div>
 
-            <label for="">Prime de caisse</label>
-            <input type="number" name="" id="">
+                        <div class="row">
+                                <div class="col-">
+                                    <label for="">Prime sur ouverture de compte</label>    
+                                </div>
+                                <div class="col-">
+                                    <input class="form-control" type="number" name="" id="">
+                                </div>
+                        </div>
 
-            <label for="">Prime de responsabilité</label>
-            <input type="number" name="" id="">
+                        <div class="row">
+                            <div class="col-">
+                                    <label for="">CNSS</label>
+                            </div>
+                            <div class="col-">
+                                <input class="form-control" type="text" name="" id="">
+                            </div>
+                        </div>
 
-            <label for="">Indemnité de logement</label>
-            <input type="number" name="" id="">
+                        <div class="row"> 
+                            <div class="col-">
+                                <label for="">IRPP</label>
+                            </div>
+                            <div class="col-">
+                                <input class="form-control" type="text" name="" id="">
+                            </div>
+                        </div>
 
-            <label for="">Indemnité de représentation</label>
-            <input type="number" name="" id="">
+                        <div class="row"> 
+                                <div class="col-">
+                                    <label for="">IRPP</label>
+                                </div>
+                                <div class="col-">
+                                    <input class="form-control" type="text" name="" id="">
+                                </div>
+                            </div>
 
-            <label for="">Prime d'habillement</label>
-            <input type="number" name="" id="">
+                        <div class="row"> 
+                            <div class="col-">
+                                <label for="">IRPP</label>
+                            </div>
+                            <div class="col-">
+                                <input class="form-control" type="text" name="" id="">
+                            </div>
+                            </div>
 
-            <label for="">Prime de déplacement</label>
-            <input type="number" name="" id="">
-
-            <label for="">Prime d'encouragement</label>
-            <input type="number" name="" id="">
-
-            <label for="">Prime de santé</label>
-            <input type="number" name="" id="">
-
-            <label for="">Prime de terrain</label>
-            <input type="number" name="" id="">
-
-            <label for="">Prime de jours fériés</label>
-            <input type="number" name="" id="">
-
-            <label for="">Prime semestrielle</label>
-            <input type="number" name="" id="">
-
-            <label for="">Prime sur ouverture de compte</label>
-            <input type="number" name="" id="">
-
-            <label for="">CNSS</label>
+                        <div class="row"> 
+                            <div class="col-">
+                                <label for="">IRPP</label>
+                            </div>
+                            <div class="col-">
+                                <input class="form-control" type="text" name="" id="">
+                            </div>
+                        </div>
+            </form>
         </form>
     </div>
 @endsection

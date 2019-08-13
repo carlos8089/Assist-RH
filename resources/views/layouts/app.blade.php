@@ -16,10 +16,15 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <div class="col-4">
+            <div class="col-6">
                     <form action={{route('personnel')}}>
-                        <input type="text" placeholder="nom / numero matricule" id="rechercherInput">
-                        <input type="submit" class="btn" value="Rechercher">
+                        <div class="row">
+                            <div class="col-8">
+                                <input class="form-control" type="text" placeholder="nom / numero matricule" id="rechercherInput">
+                            </div>     
+                            <input  type="submit" class="btn" value="Rechercher">
+                        </div>
+                        
                     </form>
                 </div>
         <ul class="navbar-nav ml-auto">
