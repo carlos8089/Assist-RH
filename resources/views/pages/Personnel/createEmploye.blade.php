@@ -7,22 +7,22 @@
             overflow: auto;
             
         }
+        label{
+                      display: inline-block;
+                      
+                  }
+                  .row{
+                      margin-bottom: 8px;
+                  }
+        #boutonVld{
+            float: right;
+        }
     </style>
     <div class="main">
         <h3>Créer un nouvel employé</h3>
         <br>
         <form action="" method="post">
             <section>
-                <style>
-                  label{
-                      display: inline-block;
-                      
-                  }
-                  .row{
-                      margin: 5px;
-                      left: 0;
-                  }
-                </style>
                 <h4>Identité</h4>
                 <form class="form-horizontal" action="" method="">
 
@@ -82,7 +82,12 @@
                     <div class="row">
                         <div class="col-3"><label for="sitMat">Situation matrimoniale</label></div>
                         <div class="col-8">
-                            <input class="form-control" type="text" name="isitMat" id="sitMat">
+                            <select class="form-control" type="text" name="isitMat" id="sitMat">
+                                <option value="Celibataire">Celibataire</option>
+                                <option value="Marié(e)">Marié(e)</option>
+                                <option value="Divorcé(e)">Divorcé(e)</option>
+                                <option value="Veuf(ve)">Veuf(ve)</option>
+                            </select>
                         </div>
                     </div>
                     <div class="row">
@@ -130,8 +135,17 @@
                         </div>
                                 
                     </div>
+                    <div class="row">
+                        <div class="col-2"> <label for="">Date d'embauche</label> </div>
+                        <div class="col-6">
+                            <input class="form-control" type="date" name="" id="">
+                        </div>
+                                
+                    </div>
                 </form>
             </section>
+
+            <input type="submit" class="btn btn-success" value="Valider" id="boutonVld">
         </form>
     </div>
 @endsection

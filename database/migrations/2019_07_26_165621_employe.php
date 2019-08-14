@@ -19,25 +19,18 @@ class Employe extends Migration
             $table->string('nom', 100)->nullable()->default('text');
             $table->string('prenoms', 100)->nullable()->default('text');
             $table->char('sexe', 1)->default('M');
+            $table->dateTime('dateNais')->nullable()->default(new DateTime());
+            $table->string('lieuNais', 100)->nullable()->default('text');
             $table->string('sitMat', 100)->nullable()->default('text');
             $table->smallInteger('nbEnfant')->nullable()->default(0);
+            $table->string('addr', 100)->nullable()->default('text');
+            $table->dateTime('dateEmbauche')->nullable()->default(new DateTime());
+            
             $table->timestamps();
         });
 
-        /*la table utilisateur */
-        Schema::create('emploi', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('libellePoste', 100)->nullable()->default('text');
-            $table->string('agence', 100)->nullable()->default('text');
-            $table->timestamps();
-        });
-
-        Schema::create('niveau', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('nom', 100)->unique();
-            $table->string('slug', 100)->unique();
-            $table->timestamps();
-        });
+        
+        
     }
 
     /**
@@ -48,5 +41,6 @@ class Employe extends Migration
     public function down()
     {
         //
+        Schema::dropIfExists('employe');
     }
 }

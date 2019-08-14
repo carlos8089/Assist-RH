@@ -36,3 +36,4 @@ Route::get('/profils', 'profilsController@show')->name('profils');
 Route::get('/personnel/listeEmploye', 'listeEmployeController@index')->name('listeEmploye');
 Route::get('/creerBulletin', 'creerBulletinController@index')->name('creerBulletin');
 Route::get('/personnel/createEmploye', 'createEmployeController@index')->name('creerEmploye');
+
