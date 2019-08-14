@@ -149,3 +149,15 @@
         </form>
     </div>
 @endsection
+@section('element2')
+    
+    <div class="card">
+        <div>
+            <img src="../../images/IMG-20190701-WA0021.jpg" alt="image test">
+        </div>
+        <div>
+            <strong> Mr JOHNSON</strong>
+        </div>
+    </div>
+
+@endsection

@@ -36,7 +36,7 @@
                                     <div class="col-8">
                                         <input class="form-control" type="text" placeholder="nom / numero matricule" id="rechercherInput">
                                     </div>     
-                                    <input  type="submit" class="btn btn-warning" value="Rechercher">
+                                <input  type="submit" class="btn btn-warning" value="Rechercher">
                                 </div>
                                 
                         </form>
@@ -214,11 +214,17 @@
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-1"> <label for="">Agence</label> </div>
+                                            <div class="col-2"> <label for="">Agence</label> </div>
                                             <div class="col-6">
                                                 <input class="form-control" type="text" name="" id="">
                                             </div>
                                             
+                                        </div>
+                                        <div class="row">
+                                                <div class="col-2"> <label for="">Date d'embauche</label> </div>
+                                                <div class="col-6">
+                                                    <input class="form-control" type="date" name="" id="">
+                                                </div>
                                         </div>
                                         
 
