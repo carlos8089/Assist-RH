@@ -29,15 +29,15 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/', 'HomeController@index' );
 
-Route::get('/fiche', 'ficheController@show')->name('fiche');
+Route::get('/fiche', 'ficheController@page')->name('fiche');
 
-Route::get('/personnel', 'personnelController@show')->name('personnel');
+Route::get('/personnel', 'personnelController@page')->name('personnel');
 
-Route::get('/parametres', 'parametresController@show')->name('parametres');
+Route::get('/parametres', 'parametresController@page')->name('parametres');
 
-Route::get('/profil', 'profilController@show')->name('profil');
+Route::get('/profil', 'profilController@page')->name('profil');
 
-Route::get('/profils', 'profilsController@show')->name('profils');
+Route::get('/profils', 'profilsController@page')->name('profils');
 
 Route::get('/personnel/createEmploye', 'createEmployeController@index')->name('creerEmploye');
 

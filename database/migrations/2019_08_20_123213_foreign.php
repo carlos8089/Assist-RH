@@ -20,9 +20,7 @@ class Foreign extends Migration
             $table->foreign('contrat')->references('libelleContrat')->on('contrat')->onDelete('cascade');
            
         });
-        Schema::table('users', function (Blueprint $table) {
-            $table->foreign('employe_id')->references('id')->on('employe')->onDelete('cascade');
-        });
+        
     }
 
     /**
@@ -33,5 +31,14 @@ class Foreign extends Migration
     public function down()
     {
         //
+       
+        Schema::table('employe', function(Blueprint $table){
+            $table->dropForeign('poste');
+            $table->dropForeign('agence_employe_nomAgence_foreign');
+            $table->dropForeign('contrat_employe_libelleContrat_foreign');
+            $table->dropColumn('agence');
+            $table->dropColumn('contrat');
+            $table->dropColumn('poste');
+        });
     }
 }

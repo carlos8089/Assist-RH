@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 
 class profilsController extends Controller
 {
+    public function page(){
+        return view('pages.Profils.profils');
+    }
+
+    
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +19,7 @@ class profilsController extends Controller
     public function index()
     {
         //
-        return view('pages.Profils.profils');
+        return view('pages.Profil.profils');
     }
 
     /**

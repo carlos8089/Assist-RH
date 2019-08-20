@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class personnelController extends Controller
 {
     //
-    public function show(){
-        
+    public function page(){
+        return view('pages.Personnel.personnel');
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\employe;
 
 class employeController extends Controller
 {
@@ -17,7 +18,10 @@ class employeController extends Controller
     public function index()
     {
         //
-        return view('pages.Personnel.personnel');
+        $employe = employe::all()  ;
+        foreach ($employe) {
+            echo $employe->name . '<br>';
+        }
     }
 
     /**
@@ -49,10 +53,10 @@ class employeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(employe $employe )
     {
         //
-        return 'voilà je suis '.$id;
+       echo 'Nom : '.$user->name . '<br>';
     }
 
     /**

@@ -36,16 +36,7 @@ class Employe extends Migration
             $table->timestamps();
         });
 
-        
-
-
-       
-        
-        
-        
     }
-
-
 
     /**
      * Reverse the migrations.
@@ -55,13 +46,6 @@ class Employe extends Migration
     public function down()
     {
         //
-        Schema::table('employe', function(Blueprint $table){
-            $table->dropForeign('poste');
-            $table->dropForeign('agence_employe_nomAgence_foreign');
-            $table->dropForeign('contrat_employe_libelleContrat_foreign');
-            $table->dropColumn('agence');
-            $table->dropColumn('contrat');
-            $table->dropColumn('poste');
-        });
+        Schema::dropIfExists('employe');
     }
 }
