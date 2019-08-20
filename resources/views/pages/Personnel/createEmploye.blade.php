@@ -156,7 +156,7 @@
             <img src="../../images/IMG-20190701-WA0021.jpg" alt="image test">
         </div>
         <div>
-            <strong> Mr JOHNSON</strong>
+            <img src="" alt="charger" srcset="">
         </div>
     </div>
 

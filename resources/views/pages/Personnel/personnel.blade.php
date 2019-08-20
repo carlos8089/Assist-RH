@@ -24,17 +24,20 @@
         #rechercherSubmit{}
     </style>
     <div class="main">
-            
+            <?php 
+               
+             ?>
             <H2>Gestion automatisée du personnel</H2>
             <div class="row">
                 <div class="col-3">
-                <a href="{{route('creerEmploye')}}"  class="btn btn-primary" >Créer un nouveau salarié</a>
+                <a href="{{route('employe.create')}}"  class="btn btn-primary" >Créer un nouveau salarié</a>
                 </div>
                 <div class="col-6">
-                        <form action={{route('personnel')}}>
+                    
+                        <form action={{route('employe.index')}}>
                                 <div class="row">
                                     <div class="col-8">
-                                        <input class="form-control" type="text" placeholder="nom / numero matricule" id="rechercherInput">
+                                        <input class="form-control" type="text" placeholder="nom / numero matricule" id="rechercherInput" name="inpRechercher">
                                     </div>     
                                 <input  type="submit" class="btn btn-warning" value="Rechercher">
                                 </div>

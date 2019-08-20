@@ -4,8 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class profilsController extends Controller
+class employeController extends Controller
 {
+    public function lister(){
+        return view('pages.Personnel.listeEmployé');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +17,7 @@ class profilsController extends Controller
     public function index()
     {
         //
-        return view('pages.Profils.profils');
+        return view('pages.Personnel.personnel');
     }
 
     /**
@@ -25,6 +28,8 @@ class profilsController extends Controller
     public function create()
     {
         //
+        
+        return view('pages.Personnel.createEmploye');
     }
 
     /**
@@ -47,6 +52,7 @@ class profilsController extends Controller
     public function show($id)
     {
         //
+        return 'voilà je suis '.$id;
     }
 
     /**

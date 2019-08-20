@@ -24,7 +24,7 @@
     </style>
     <div class="main">
         <h3>Créer un nouveau bulletin de paie</h3>
-    <form action="..\traitements\Paie\creerBulletin.php" method="post" class="form">
+    <form action="{{route('bulletin.store','<?php ?>')}}" method="put" class="form">
             <section>
                     <div class="row">
                             <div class="col-4">
@@ -70,6 +70,7 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
             </section>
                 
             
@@ -306,11 +307,11 @@
                     </div>
             </section>
                 
-
+            <input type="submit" class="btn btn-success" value="Valider" id="boutonVld">
             
         </form>
 
-        <input type="submit" class="btn btn-success" value="Valider" id="boutonVld">
+        
     </div>
 @endsection
 

@@ -19,6 +19,8 @@ class Groupe extends Migration
             $table->string('libelleGroupe', 100)->nullable()->default('text');
             $table->timestamps();
         });
+
+       
     }
 
     /**

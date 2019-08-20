@@ -16,7 +16,7 @@ class Poste extends Migration
         //
         Schema::create('poste', function (Blueprint $table) {
             $table->bigIncrements('idPoste');
-            $table->string('libellePoste', 100)->nullable()->default('text');
+            $table->string('libellePoste', 100)->nullable()->default('text')->index();
             $table->timestamps();
         });
     }

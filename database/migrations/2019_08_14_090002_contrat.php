@@ -16,7 +16,7 @@ class Contrat extends Migration
         //
         Schema::create('contrat', function (Blueprint $table) {
             $table->bigIncrements('idTypeContrat');
-            $table->string('libelleContrat', 100)->nullable()->default('text');
+            $table->string('libelleContrat', 100)->nullable()->default('text')->index();
             $table->timestamps();
         });
     }
