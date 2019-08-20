@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Poste extends Migration
+class CreateGroupesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,8 @@ class Poste extends Migration
      */
     public function up()
     {
-        //
-        Schema::create('poste', function (Blueprint $table) {
-            $table->bigIncrements('idPoste');
-            $table->string('libellePoste', 100)->nullable()->default('text')->index();
+        Schema::create('groupes', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->timestamps();
         });
     }
@@ -28,7 +26,6 @@ class Poste extends Migration
      */
     public function down()
     {
-        //
-        Schema::dropIfExists('poste');
+        Schema::dropIfExists('groupes');
     }
 }

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\employe;
+use App\Models\employe ;
 
 class employeController extends Controller
 {
@@ -18,10 +18,11 @@ class employeController extends Controller
     public function index()
     {
         //
-        $employe = employe::all()  ;
-        foreach ($employe) {
-            echo $employe->name . '<br>';
+        $emp = employe::all();
+        foreach ($emp as $employe) {
+           $employe->nom;
         }
+      
     }
 
     /**

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Groupe extends Migration
+class CreatePhotosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,10 @@ class Groupe extends Migration
      */
     public function up()
     {
-        //
-        Schema::create('groupe', function (Blueprint $table) {
-            $table->bigIncrements('idGroupe');
-            $table->string('libelleGroupe', 100)->nullable()->default('text');
+        Schema::create('photos', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->timestamps();
         });
-
-       
     }
 
     /**
@@ -30,7 +26,6 @@ class Groupe extends Migration
      */
     public function down()
     {
-        //
-        Schema::dropIfExists('groupe');
+        Schema::dropIfExists('photos');
     }
 }
