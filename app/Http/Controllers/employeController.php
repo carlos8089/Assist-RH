@@ -19,7 +19,9 @@ class employeController extends Controller
     {
         //
         $emp = employe::all();
+        echo'test';
         foreach ($emp as $employe) {
+            echo 'l\'employe est ';
            $employe->nom;
         }
       
