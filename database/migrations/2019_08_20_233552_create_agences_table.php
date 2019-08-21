@@ -15,6 +15,9 @@ class CreateAgencesTable extends Migration
     {
         Schema::create('agences', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('nomAgence', 100)->nullable()->default('text')->index();
+            $table->string('addrAgence', 100)->nullable()->default('text');
+            $table->integer('NumTelAgence')->unsigned()->nullable()->default(12);
             $table->timestamps();
         });
     }

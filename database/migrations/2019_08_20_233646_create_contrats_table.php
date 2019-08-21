@@ -15,6 +15,7 @@ class CreateContratsTable extends Migration
     {
         Schema::create('contrats', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('libelleContrat', 100)->nullable()->default('text')->index();
             $table->timestamps();
         });
     }
