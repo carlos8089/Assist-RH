@@ -47,7 +47,7 @@
                             text-align: center;
                         }
                     </style>
-                    <a id="profile" class="nav-link text-secondary" href="{{ route('profil') }}">@lang('<strong>Mon profil</strong>')</a>
+                    <a id="profile" class="nav-link text-secondary" href="{{ route('User.show','') }}">@lang('<strong>Mon profil</strong>')</a>
                     <a id="logout" class="nav-link text-danger" href="{{ route('logout') }}">@lang('<strong>Déconnexion</strong>')</a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hide">
                         {{ csrf_field() }}

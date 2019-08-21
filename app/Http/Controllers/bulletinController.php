@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\ {
+    Http\Requests\BulletinRequest,
+    Models\bulletin
+};
 
 class bulletinController extends Controller
 {
@@ -14,6 +18,7 @@ class bulletinController extends Controller
     public function index()
     {
         //
+
     }
 
     /**
@@ -33,9 +38,9 @@ class bulletinController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(BulletinRequest $request)
     {
-        //
+        bulletin::create($request->all());
     }
 
     /**
@@ -44,7 +49,7 @@ class bulletinController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(bulletin $bulletin)
     {
         //
     }

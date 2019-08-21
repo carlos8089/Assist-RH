@@ -35,21 +35,12 @@ Route::get('/personnel', 'personnelController@page')->name('personnel');
 
 Route::get('/parametres', 'parametresController@page')->name('parametres');
 
-Route::get('/profil', 'profilController@page')->name('profil');
-
-Route::get('/profils', 'profilsController@page')->name('profils');
-
-Route::get('/personnel/createEmploye', 'createEmployeController@index')->name('creerEmploye');
+Route::get('/users', 'UtilisateursController@page')->name('utilisateurs');
 
 Route::resource('bulletin', 'bulletinController');
 
 Route::resource('employe', 'employeController');
 
-Route::resource('profils', 'profilsController');
+Route::resource('User', 'UserController');
 
-Route::get('/personnel/listeEmploye', 'employeController@lister')->name('listeEmploye');
-
-Route::post('/personnel/rechercher', function () {
-    return view('traitements.Personnel.rechercher');
-})->name('rechercher');
 

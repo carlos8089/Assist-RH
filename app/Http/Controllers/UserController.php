@@ -3,14 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\ {
+    Http\Requests\ProfilRequest,
+    User
+};
 
-class profilsController extends Controller
+class UserController extends Controller
 {
-    public function page(){
-        return view('pages.Profils.profils');
-    }
-
-    
     /**
      * Display a listing of the resource.
      *
@@ -18,8 +17,14 @@ class profilsController extends Controller
      */
     public function index()
     {
-        //
-        return view('pages.Profil.profils');
+        $users = User::all();
+
+        foreach ($users as $user) {
+            # code...
+            echo $user->name.'<br>';
+            echo $user->email.'<br>';
+        }
+       
     }
 
     /**
@@ -30,6 +35,7 @@ class profilsController extends Controller
     public function create()
     {
         //
+        return view('pages.Profils.creerProfil') ;
     }
 
     /**
@@ -38,9 +44,9 @@ class profilsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProfilRequest $request)
     {
-        //
+        User::create($request->all());
     }
 
     /**
@@ -49,9 +55,10 @@ class profilsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(User $user)
     {
-        //
+        
+        echo 'Nom : '.$user->name.'<br>';
     }
 
     /**
@@ -60,7 +67,7 @@ class profilsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(User $user)
     {
         //
     }
@@ -72,7 +79,7 @@ class profilsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ProfilRequest $request, $id)
     {
         //
     }
@@ -83,7 +90,7 @@ class profilsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(User $user)
     {
         //
     }

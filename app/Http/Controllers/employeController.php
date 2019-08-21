@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\employe ;
+use App\Http\Requests\EmployeRequest;
+use App\Models\employe;
+
 
 class employeController extends Controller
 {
@@ -18,9 +19,9 @@ class employeController extends Controller
     public function index()
     {
         //
-        $emp = employe::all();
-        echo'test';
-        foreach ($emp as $employe) {
+        $employes = employe::all();
+        
+        foreach ($employes as $employe) {
             echo 'l\'employe est ';
            $employe->nom;
         }
@@ -45,9 +46,9 @@ class employeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(EmployeRequest $request)
     {
-        //
+       dd(employe::create($request->all()));
     }
 
     /**
@@ -68,7 +69,7 @@ class employeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(employe $employe)
     {
         //
     }
@@ -80,7 +81,7 @@ class employeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(EmployeRequest $request, $id)
     {
         //
     }

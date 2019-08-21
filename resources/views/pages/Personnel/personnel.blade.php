@@ -34,7 +34,7 @@
                 </div>
                 <div class="col-6">
                     
-                        <form action={{route('employe.index')}}>
+                        <form action={{route('employe.show','inpRechercher')}}>
                                 <div class="row">
                                     <div class="col-8">
                                         <input class="form-control" type="text" placeholder="nom / numero matricule" id="rechercherInput" name="inpRechercher">
