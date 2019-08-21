@@ -3,12 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\View\View;
+use App\ {
+    Http\Requests\ProfilRequest,
+    User
+};
 
 class UtilisateursController extends Controller
 {
     //
     public function page()
     {
-        return view('pages.Profils.profils');
+        
+        $users = User::orderBy('id')->get(['name','email']);
+
+        return view('pages.Profils.profils',compact('users'));
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 use App\ {
     Http\Requests\ProfilRequest,
     User
@@ -10,6 +11,7 @@ use App\ {
 
 class UserController extends Controller
 {
+    
     /**
      * Display a listing of the resource.
      *
@@ -17,14 +19,9 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::all();
+        $users = User::orderBy('id')->get();
 
-        foreach ($users as $user) {
-            # code...
-            echo $user->name.'<br>';
-            echo $user->email.'<br>';
-        }
-       
+        return view('pages.Profils.listeProfils',compact('users'));
     }
 
     /**
@@ -36,6 +33,7 @@ class UserController extends Controller
     {
         //
         return view('pages.Profils.creerProfil') ;
+        
     }
 
     /**
@@ -47,6 +45,8 @@ class UserController extends Controller
     public function store(ProfilRequest $request)
     {
         User::create($request->all());
+
+        return redirect()->route('utilisateurs');
     }
 
     /**

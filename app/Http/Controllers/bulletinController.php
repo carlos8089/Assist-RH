@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 use App\ {
     Http\Requests\BulletinRequest,
     Models\bulletin
@@ -18,6 +19,7 @@ class bulletinController extends Controller
     public function index()
     {
         //
+        $bulletins = bullentin::get();
 
     }
 
@@ -28,7 +30,6 @@ class bulletinController extends Controller
      */
     public function create()
     {
-        //
         return view('pages.Paie.creerBulletin');
     }
 
@@ -41,6 +42,7 @@ class bulletinController extends Controller
     public function store(BulletinRequest $request)
     {
         bulletin::create($request->all());
+        return redirect()->route('fiche');
     }
 
     /**

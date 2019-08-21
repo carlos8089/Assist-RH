@@ -121,14 +121,23 @@
                     </div>
 
                     <h4>Emploi</h4>
-                    
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-3">
+                                <label for="">Numero matricule</label>
+                            </div>
+                            <div class="col-2">
+                                <input type="text" name="numMat" id="numMat" class="form-control">
+                            </div>
+                        </div>
+                    </div>
                     <div class="form-group">
                         <div class="row">
                                     <div class="col-6">
                                         <div class="row">
                                             <div class="col-2"><label for="">Poste</label></div>
                                             <div class="col-8">
-                                                <input class="form-control" type="text" name="iposte" id="">
+                                                <input class="form-control" type="text" name="poste" id="">
                                             </div>
                                         </div>
                                     </div>
@@ -159,7 +168,7 @@
                             <div class="row">
                                     <div class="col-2"> <label for="">Date d'embauche</label> </div>
                                     <div class="col-6">
-                                        <input class="form-control" type="date" name="" id="">
+                                        <input class="form-control" type="date" name="dateEmbauche" id="">
                                     </div>
                                             
                                 </div>

@@ -24,11 +24,7 @@ class EmployeRequest extends FormRequest
     public function rules()
     {
         return [
-            'nom'=>'bail|required|alpha';
-            'prenom'=>'bail|required|alpha';
-            'dateNais'=>'bail|required|date';
-            'lieuNais'=>'bail|alpha';
-             
+            //
         ];
     }
 }

@@ -2,30 +2,28 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\EmployeRequest;
+use Illuminate\Http\Request;
+use Illuminate\View\View;
+use App\Http\Requests\EmployeRequest; 
+
 use App\Models\employe;
 
 
 class employeController extends Controller
 {
     public function lister(){
-        return view('pages.Personnel.listeEmployé');
+       
     }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index() : View
     {
-        //
-        $employes = employe::all();
+        $employes = employe::orderBy('id')->get(['nom','prenoms','numMat']);
         
-        foreach ($employes as $employe) {
-            echo 'l\'employe est ';
-           $employe->nom;
-        }
-      
+        return view('pages.Personnel.listeEmploye', compact('employes')); 
     }
 
     /**
@@ -35,8 +33,6 @@ class employeController extends Controller
      */
     public function create()
     {
-        //
-        
         return view('pages.Personnel.createEmploye');
     }
 
@@ -48,7 +44,8 @@ class employeController extends Controller
      */
     public function store(EmployeRequest $request)
     {
-       dd(employe::create($request->all()));
+       employe::create($request->all());
+       return redirect()->route('personnel');
     }
 
     /**
@@ -97,3 +94,4 @@ class employeController extends Controller
         //
     }
 }
+?>

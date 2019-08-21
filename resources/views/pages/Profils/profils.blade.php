@@ -15,10 +15,16 @@
     </div>
     <div class="">
         <a href="" class="btn btn-danger"><p>Supprimer un profil existant</p></a>
-    </div>
+    </div> 
     <div class="">
     <a href="{{route('User.index')}}" class="btn btn-primary">Voir la liste des profils</a>
-    </div>
+    </div> 
+
+    @foreach ($users as $user)
+        <div>
+            <?= $user ?>
+        </div>
+    @endforeach
 
 </div>
 
