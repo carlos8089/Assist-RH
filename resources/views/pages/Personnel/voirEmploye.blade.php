@@ -1,6 +1,6 @@
 @extends('templates.base')
 @section('element1')
-<style>
+    <style>
         .main{
             padding: 20px;
             background-color: #ffffff;
@@ -37,7 +37,7 @@
                         <form action={{route('employe.show',['employe'=>$employe->nom])}}>
                                 <div class="row">
                                     <div class="col-8">
-                                        <input class="form-control" type="text" placeholder="nom / numero matricule" id="rechercherInput" name="inpRechercher">
+                                    <input class="form-control" type="text" placeholder="nom / numero matricule" id="rechercherInput" name="inpRechercher" >
                                     </div>     
                                 <input  type="submit" class="btn btn-warning" value="Rechercher">
                                 </div>
@@ -91,12 +91,8 @@
                                 border: 1px solid #ccc;
                                 border-top: none;
                             }
-                            </style>
-                            
-                            
-                            
-                            
-                            
+                    </style>
+
                             <div class="tab">
                               <button class="tablinks" onclick="openCity(event, 'Civilite')" id="defaultOpen"><strong>Civilités</strong></button>
                               <button class="tablinks" onclick="openCity(event, 'Emploi')"><strong>Emploi</strong> </button>
@@ -123,7 +119,7 @@
                                                 <div class="row">
                                                     <div class="col-2"><label for="nom" class="control-label ">Nom</label></div>
                                                     <div class="col-10">
-                                                        <input class="form-control" type="text" name="iNom" id="nom" disabled>
+                                                        <input class="form-control" type="text" name="iNom" id="nom" value="{{ $employe->nom }}" disabled>
                                                     </div>
                                                 </div>
                                             </div>
@@ -131,7 +127,7 @@
                                                 <div class="row">
                                                     <div class="col-2"><label for="prenom" class="control-label ">Prénoms</label></div>
                                                     <div class="col-10">
-                                                        <input class="form-control" type="text" name="iPrenom" id="prenom" disabled>
+                                                        <input class="form-control" type="text" name="iPrenom" id="prenom" value="{{ $employe->prenoms }}" disabled>
                                                     </div> 
                                                 </div> 
                                             </div>
@@ -152,7 +148,7 @@
                                             <div class="col-1"> <label for="nais">Né(e) le</label> </div>
                                             
                                             <div class="col-5">
-                                                <input class="form-control" type="date" name="idateNais" id="nais" disabled>
+                                                <input class="form-control" type="date" name="idateNais" id="nais" value="{{ $employe->dateNais }}" disabled>
                                             </div>
                                         </div>
 
@@ -161,7 +157,7 @@
                                                 <label for="lieuNais" class="control-label ">À</label>
                                             </div>
                                             <div class="col-5">
-                                                <input  class="form-control" type="text" name="ilieuNais" id="lieuNais" disabled>
+                                                <input  class="form-control" type="text" name="ilieuNais" id="lieuNais" value="{{ $employe->lieuNais }}" disabled>
                                             </div>
                                         </div>     
                                     </form>
@@ -173,19 +169,19 @@
                                         <div class="row">
                                             <div class="col-3"><label for="sitMat">Situation matrimoniale</label></div>
                                             <div class="col-8">
-                                                <input class="form-control" type="text" name="isitMat" id="sitMat" disabled>
+                                                <input class="form-control" type="text" name="isitMat" id="sitMat" value="{{ $employe->sitMat }}" disabled>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-3"><label for="nbEnfant">Nombres d'enfants</label></div>
                                             <div class="col-8">
-                                                <input class="form-control" type="text" name="inbEnfant" id="nbEnfant" disabled>
+                                                <input class="form-control" type="text" name="inbEnfant" id="nbEnfant" value="{{ $employe->nbEnfant }}" disabled>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-3"><label for="addr">Adresse</label></div>
                                             <div class="col-8">
-                                                <input class="form-control" type="text" name="iaddr" id="addr" disabled>
+                                                <input class="form-control" type="text" name="iaddr" id="addr" value="{{ $employe->addr }}" disabled>
                                             </div>
                                         </div>
                                     </form>
@@ -201,7 +197,7 @@
                                                     <div class="row">
                                                             <div class="col-2"><label for="">Poste</label></div>
                                                             <div class="col-8">
-                                                                <input class="form-control" type="text" name="iposte" id="">
+                                                                <input class="form-control" type="text" name="poste" id="poste" value="{{ $employe->poste }}" disabled >
                                                             </div>
                                                         </div>
                                             </div>
@@ -217,16 +213,27 @@
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-2"> <label for="">Agence</label> </div>
                                             <div class="col-6">
-                                                <input class="form-control" type="text" name="" id="">
+                                                <div class="row">
+                                                    <div class="col-2"> <label for="">Agence</label> </div>
+                                                    <div class="col-6">
+                                                        <input class="form-control" type="text" name="agence" id="agence" value="{{ $employe->agence }}" disabled >
+                                                    </div>
+                                                </div>
                                             </div>
-                                            
+                                            <div class="col-6">
+                                                <div class="row">
+                                                    <div class="col-2"><label for="">Numero matricule</label></div>
+                                                    <div class="col-6">
+                                                        <input type="text" name="numMat" id="numMat" value="{{ $employe->numMat }}" >
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="row">
                                                 <div class="col-2"> <label for="">Date d'embauche</label> </div>
                                                 <div class="col-6">
-                                                    <input class="form-control" type="date" name="" id="">
+                                                    <input class="form-control" type="date" name="dateEmbauche" id="dateEmbauche" value="{{ $employe->dateEmbauche }}" disabled>
                                                 </div>
                                         </div>
                                         
@@ -235,17 +242,10 @@
                                     </form>
                                     
                             </div>
-                            
-                            <div id="Donnee" class="tabcontent">
-                              <h3>Donnee</h3>
-                              
-                            </div>
-
-                            <div id="CV" class="tabcontent">
-                                
-                            </div>
-                            
-                            <script>
+            
+            </div>    
+    </div>                
+    <script>
                             function openCity(evt, cityName) {
                                 var i, tabcontent, tablinks;
                                 tabcontent = document.getElementsByClassName("tabcontent");
@@ -262,6 +262,6 @@
                             
                             // Get the element with id="defaultOpen" and click on it
                             document.getElementById("defaultOpen").click();
-                            </script>
-            </div>
+    </script>
+           
 @endsection

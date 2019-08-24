@@ -4,10 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\View\View;
-use App\ {
-    Http\Requests\BulletinRequest,
-    Models\bulletin
-};
+use App\Http\Requests\BulletinRequest; 
+
+use App\Models\bulletin;
 
 class bulletinController extends Controller
 {
@@ -19,7 +18,7 @@ class bulletinController extends Controller
     public function index()
     {
         //
-        $bulletins = bullentin::get();
+        $bulletins = bulletin::get();
 
     }
 

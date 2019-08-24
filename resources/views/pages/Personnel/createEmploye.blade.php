@@ -137,7 +137,9 @@
                                         <div class="row">
                                             <div class="col-2"><label for="">Poste</label></div>
                                             <div class="col-8">
-                                                <input class="form-control" type="text" name="poste" id="">
+                                                <select name="poste" id="poste">
+
+                                                </select>
                                             </div>
                                         </div>
                                     </div>
@@ -145,7 +147,7 @@
                                         <div class="row">
                                             <div class="col-4"><label for="">Type de contrat</label></div>
                                             <div class="col-7">
-                                                <select class="form-control">
+                                                <select class="form-control" name="contrat" id="contrat">
                         
                                                 </select>
                                             </div>
@@ -158,7 +160,9 @@
                         <div class="row">
                             <div class="col-1"> <label for="">Agence</label> </div>
                             <div class="col-6">
-                                <input class="form-control" type="text" name="" id="">
+                                <select name="agence" id="agence">
+
+                                </select>
                             </div>
                                             
                         </div>
@@ -168,7 +172,7 @@
                             <div class="row">
                                     <div class="col-2"> <label for="">Date d'embauche</label> </div>
                                     <div class="col-6">
-                                        <input class="form-control" type="date" name="dateEmbauche" id="">
+                                        <input class="form-control" type="date" name="created_at" id="created_at">
                                     </div>
                                             
                                 </div>

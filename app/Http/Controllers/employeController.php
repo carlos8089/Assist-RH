@@ -11,9 +11,6 @@ use App\Models\employe;
 
 class employeController extends Controller
 {
-    public function lister(){
-       
-    }
     /**
      * Display a listing of the resource.
      *
@@ -21,9 +18,9 @@ class employeController extends Controller
      */
     public function index() : View
     {
-        $employes = employe::orderBy('id')->get(['nom','prenoms','numMat']);
+        $employes = employe::orderBy('id')->get();
         
-        return view('pages.Personnel.listeEmploye', compact('employes')); 
+        return view('pages.Personnel.personnelPage', compact('employes')); 
     }
 
     /**
@@ -54,10 +51,10 @@ class employeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(employe $employe )
+    public function show($id)
     {
-        //
-       echo 'Nom : '.$user->name . '<br>';
+       $employes = employe::where('id',$id)->get();
+       return view('pages.Personnel.voirEmploye', compact($employes));
     }
 
     /**
@@ -66,9 +63,10 @@ class employeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(employe $employe)
+    public function edit($id)
     {
-        //
+       $employes = employe::where('id',$id)->get();
+       return view('pages.Personnel.editEmploye', compact($employes));
     }
 
     /**
@@ -78,9 +76,27 @@ class employeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(EmployeRequest $request, $id)
+    public function update(EmployeUpdateRequest $request, $id)
     {
-        //
+        $nom = $request->nom;
+        $prenom = $request->prenom;
+        $sexe = $request->sexe;
+        $dateNais = $request->dateNais;
+        $lieuNais = $request->lieuNais;
+        $sitMat =$request->sitMat;
+        $nbEnfant = $request->nbEnfant;
+        $addr = $request->addr;
+        $numMat = $request->numMat;
+        $poste = $request->poste;
+        $contrat = $request->contrat;
+        $agence = $request->agence;
+        $dateEmbauche = $request->dateEmbauche;
+
+        employe::where('id',$id)->update(['nom'=>$nom , 'prenom'=>$prenom , 'sexe'=>$sexe , 'dateNais'=>$dateNais ,
+        'lieuNais'=>$lieuNais , 'sitMat'=>$sitMat , 'nbEnfant'=>$nbEnfant , 'addr'=>$addr , 'numMat'=>$numMat ,
+        'poste'=>$poste , 'contrat'=>$contrat , 'agence'=>$agence , 'dateEmbauche'=>$dateEmbauche]);
+
+        return redirect()->route('employe.sow', ['id' => $id]);
     }
 
     /**
@@ -91,7 +107,8 @@ class employeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        employe::where('id',$id)->delete();
+        return redirect()->route('employe.index');
     }
 }
 ?>

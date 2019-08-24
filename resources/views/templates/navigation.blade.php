@@ -52,7 +52,7 @@
         <ul>
         <li><a href="{{route('home')}}">Accueil</a></li>
         <li><a href="{{route('fiche')}}">Gestion de la paie</a></li>
-        <li><a href="{{route('personnel')}}">Gestion du personnel</a></li>
+        <li><a href="{{route('employe.index')}}">Gestion du personnel</a></li>
         <li><a href="{{route('utilisateurs')}}">Gestion des profils</a></li>
         <li><a href="{{route('parametres')}}">Paramètres</a></li>
         <li><a href="">aide</a></li>

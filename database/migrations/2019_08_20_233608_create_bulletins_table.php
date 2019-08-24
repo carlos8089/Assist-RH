@@ -34,8 +34,11 @@ class CreateBulletinsTable extends Migration
             $table->integer('primeOuvertureCompte')->unsigned()->nullable()->default(12);
 
             $table->double('CNSS', 5, 2)->nullable()->default(0.00);
-            $table->double('IRPP', 5, 2)->nullable()->default(123.45);
+            $table->double('IRPP', 5, 2)->nullable()->default(0.00);
+            $table->double('TCS', 5, 2)->nullable()->default(0.00);
+            $table->double('cotisationMutuelle', 5, 2)->nullable()->default(0.00);
             $table->integer('pretImmobilier')->unsigned()->nullable()->default(12);
+            $table->double('TS', 5, 2)->nullable()->default(0.00);
             $table->timestamps();
         });
     }

@@ -56,9 +56,11 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(User $user)
-    {
-        
-        echo 'Nom : '.$user->name.'<br>';
+    {   
+        $users = User::where('id',$user->id)->get();
+        return view('pages.Profils.listeProfils', compact($users));
+
+        //echo 'Nom : '.$user->name.'<br>';
     }
 
     /**
@@ -69,7 +71,8 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        //
+        $users = User::where('id',$id)->get();
+        return view('pages.Personnel.editEmploye', compact($users));
     }
 
     /**

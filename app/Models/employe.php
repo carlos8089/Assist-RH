@@ -8,10 +8,10 @@ class employe extends Model
 {
     //
     protected $fillable = [
-        'nom','prenoms','sexe','lieuNais','sitMat','nbEnfant','addr','numMat','poste',
-        'agence','contrat'
+        'nom','prenoms','sexe','dateNais','lieuNais','sitMat','nbEnfant','addr','numMat','poste',
+        'agence','contrat','created_at'
     ];
     protected $hidden = [
-        'created_at','updated_at'
+        'updated_at'
     ];
 }
