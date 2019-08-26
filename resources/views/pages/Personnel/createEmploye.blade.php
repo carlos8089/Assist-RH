@@ -42,7 +42,7 @@
                                 <div class="row">
                                     <div class="col-2"><label for="prenom" class="control-label ">Prénoms</label></div>
                                     <div class="col-10">
-                                        <input class="form-control" type="text" name="prenom" id="prenom">
+                                        <input class="form-control" type="text" name="prenoms" id="prenoms">
                                     </div> 
                                 </div> 
                             </div>
@@ -172,7 +172,7 @@
                             <div class="row">
                                     <div class="col-2"> <label for="">Date d'embauche</label> </div>
                                     <div class="col-6">
-                                        <input class="form-control" type="date" name="created_at" id="created_at">
+                                        <input class="form-control" type="date" name="dateEmbauche" id="dateEmbauche">
                                     </div>
                                             
                                 </div>

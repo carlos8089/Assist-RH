@@ -18,7 +18,8 @@ class CreateEmployesTable extends Migration
             $table->string('nom', 100)->nullable();
             $table->string('prenoms', 100)->nullable();
             $table->char('sexe', 1)->default('M');
-            $table->date('created_at')->nullable()->default(new DateTime())->date_format('dd/mm/yyyy');
+           
+            $table->string('dateNais', 100)->nullable()->format('dd/mm/yyyy');
             $table->string('lieuNais', 100)->nullable();
 
             $table->string('sitMat', 100)->nullable();
@@ -29,6 +30,9 @@ class CreateEmployesTable extends Migration
             $table->string('poste', 100)->nullable();
             $table->string('agence', 100)->nullable();
             $table->string('contrat', 100)->nullable()->default('CDI');
+
+            $table->string('dateEmbauche', 100)->nullable()->format('dd/mm/yyyy');
+            
             $table->timestamps();
         });
     }

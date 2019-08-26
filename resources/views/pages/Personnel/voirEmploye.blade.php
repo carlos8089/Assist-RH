@@ -72,8 +72,7 @@
                     <div class="tab">
                         <button class="tablinks" onclick="openCity(event, 'Civilite')" id="defaultOpen"><strong>Civilités</strong></button>
                         <button class="tablinks" onclick="openCity(event, 'Emploi')"><strong>Emploi</strong> </button>
-                        <button class="tablinks" onclick="openCity(event, 'Donnee')"> <strong>Données bancaires</strong> </button>
-                        <button class="tablinks" onclick="openCity(event, 'CV')"><strong>Curriculum Vitae</strong> </button>
+                       
                     </div>
                                 
                     <div id="Civilite" class="tabcontent">
@@ -102,7 +101,7 @@
                                         <div class="row">
                                             <div class="col-2"><label for="prenom" class="control-label ">Prénoms</label></div>
                                             <div class="col-10">
-                                                <input class="form-control" type="text" name="iPrenom" id="prenom" value="{{ $employe->prenoms }}" disabled>
+                                                <input class="form-control" type="text" name="prenoms" id="prenoms" value="{{ $employe->prenoms }}" disabled>
                                             </div> 
                                         </div> 
                                     </div>
@@ -118,7 +117,7 @@
                                         <label for="sexeF" class="control-label">Féminin</label><input type="radio" name="iSexe" id="sexeF" value="F" disabled checked>
                                     </div>
                                 </div>
-                                            
+                                
                                 <div class="row">
                                     <div class="col-1"> <label for="nais">Né(e) le</label> </div>
                                                 

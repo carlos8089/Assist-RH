@@ -48,17 +48,17 @@
             </thead>
             <tbody>
                 @foreach ($employes as $employe)
-                <tr>
+                    <tr>
                         <td>{{ $employe->id }}</td>
                         <td>{{ $employe->nom  }}</td>
-                        <td>{{ $employe->prenom }}</td>
+                        <td>{{ $employe->prenoms }}</td>
                         <td>{{ $employe->poste }}</td>
                         <td>{{ $employe->agence  }}</td>
-                        <td><a href="{{route('employe.show',['id' => $employe->id ])}}" class="btn btn-info">Voir</a></td>
-                        <td><a href="{{route('employe.edit',['id' => $employe->id ])}}" class=" btn btn-warning">Modifier</a></td>
-                        <td><a href="{{route('employe.destroy',['id' => $employe->id ])}}" class=" btn btn-danger">Supprimer</a></td>
-                </tr>
-                    
+
+                        <td><a href="{{route('employe.show', ['id' => $employe->id ])}}" class="btn btn-info">Voir</a></td>
+                        <td><a href="{{route('employe.edit', ['id' => $employe->id ])}}" class=" btn btn-warning">Modifier</a></td>
+                        <td><a href="{{route('employe.destroy', ['id' => $employe->id ])}}" class=" btn btn-danger">Supprimer</a></td>
+                    </tr>
                 @endforeach
             </tbody>
            
