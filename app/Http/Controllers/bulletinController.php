@@ -17,8 +17,10 @@ class bulletinController extends Controller
      */
     public function index()
     {
-        //
-        $bulletins = bulletin::get();
+        
+        $bulletins = bulletin::orderBy('id')->get();
+
+        return view('pages.Paie.editerPage', compact('bulletins'));
 
     }
 
@@ -41,6 +43,7 @@ class bulletinController extends Controller
     public function store(BulletinRequest $request)
     {
         bulletin::create($request->all());
+
         return redirect()->route('fiche');
     }
 
@@ -50,9 +53,11 @@ class bulletinController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(bulletin $bulletin)
+    public function show($id)
     {
-        //
+        $bulletin = bulletin::where('id', $id)->get();
+
+        return response(view('pages.Paie.voirBulletin'),206)->header('Content-Type','application/pdf');
     }
 
     /**
@@ -63,7 +68,9 @@ class bulletinController extends Controller
      */
     public function edit($id)
     {
-        //
+        $bulletins = bulletin::where('id',$id)->get();
+
+        return view('pages.Paie.editBulletin', compact('bulletins'));
     }
 
     /**
@@ -75,7 +82,25 @@ class bulletinController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $nomEmploye = $request->nomEmploye;
+        $prenomEmploye = $request->prenomEmploye;
+        $numCNSS = $request->numCNSS;
+        $primeSante = $request->primeSante;
+        $lieuNais = $request->lieuNais;
+        $sitMat =$request->sitMat;
+        $nbEnfant = $request->nbEnfant;
+        $addr = $request->addr;
+        $numMat = $request->numMat;
+        $poste = $request->poste;
+        $contrat = $request->contrat;
+        $agence = $request->agence;
+        $dateEmbauche = $request->dateEmbauche;
+
+        bulletin::where('id',$id)->update(['nomEmploye'=>$nomEmploye , 'prenomEmploye'=>$prenomEmploye , 'numCNSS'=>$numCNSS , 'primeSante'=>$primeSante ,
+        'lieuNais'=>$lieuNais , 'sitMat'=>$sitMat , 'nbEnfant'=>$nbEnfant , 'addr'=>$addr , 'numMat'=>$numMat ,
+        'poste'=>$poste , 'contrat'=>$contrat , 'agence'=>$agence , 'dateEmbauche'=>$dateEmbauche]);
+
+        return redirect()->route('bulletin.sow', ['id' => $id]);
     }
 
     /**
@@ -86,6 +111,8 @@ class bulletinController extends Controller
      */
     public function destroy($id)
     {
-        //
+        bulletin::where('id',$id)->delete();
+
+        return redirect()->route('bulletin.index');
     }
 }

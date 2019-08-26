@@ -55,12 +55,11 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(User $user)
+    public function show($id)
     {   
-        $users = User::where('id',$user->id)->get();
-        return view('pages.Profils.listeProfils', compact($users));
+        $users = User::where('id',$id)->get();
 
-        //echo 'Nom : '.$user->name.'<br>';
+        return view('pages.Profils.profil', compact('users'));
     }
 
     /**
@@ -69,10 +68,11 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $user)
+    public function edit($id)
     {
         $users = User::where('id',$id)->get();
-        return view('pages.Personnel.editEmploye', compact($users));
+        
+        return view('pages.Profils.editUser', compact('users'));
     }
 
     /**
@@ -84,7 +84,11 @@ class UserController extends Controller
      */
     public function update(ProfilRequest $request, $id)
     {
-        //
+        $nom = $request->nom;
+
+       User::where('id',$id)->update(['password'=>$password]);
+
+        return redirect()->route('user.sow', ['id' => $id]);
     }
 
     /**
@@ -93,8 +97,10 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(User $user)
+    public function destroy($id)
     {
-        //
+       User::where('id',$id)->delete();
+        
+        return redirect()->route('user.index');
     }
 }

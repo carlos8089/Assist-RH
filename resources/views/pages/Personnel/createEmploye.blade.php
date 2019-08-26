@@ -137,7 +137,7 @@
                                         <div class="row">
                                             <div class="col-2"><label for="">Poste</label></div>
                                             <div class="col-8">
-                                                <select name="poste" id="poste">
+                                                <select name="poste" id="poste" class="form-control">
 
                                                 </select>
                                             </div>
@@ -160,7 +160,7 @@
                         <div class="row">
                             <div class="col-1"> <label for="">Agence</label> </div>
                             <div class="col-6">
-                                <select name="agence" id="agence">
+                                <select name="agence" id="agence" class="form-control">
 
                                 </select>
                             </div>

@@ -26,19 +26,20 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($employes as $employe)
-                    
-                        <td>{{ $employe->id }}</td>
-                        <td>{{ $employe->nom }}</td>
-                        <td>{{ $employe->prenom }}</td>
-                        <td>{{ $employe->sexe }}</td>
-                        <td>{{ $employe->numMat }}</td>
-                        <td>{{ $employe->poste }}</td>
-                        <td>{{ $employe->agence }}</td>
-                        <td>{{ $employe->contrat }}</td>
-                        <td><a href="{{route('employe.show',['id' => $employe->id ])}}" class=" btn btn-info">Voir</a></td>
-                        <td><a href="{{route('employe.edit',['id' => $employe->id ])}}" class=" btn btn-warning">Modifier</a></td>
-                        <td><a href="{{route('employe.destroy',['id' => $employe->id ])}}" class="btn btn-danger">Supprimer</a></td>
+                    @foreach ( $employes as $employe )
+                        <tr>
+                            <td>{{ $employe->id }}</td>
+                            <td>{{ $employe->nom }}</td>
+                            <td>{{ $employe->prenom }}</td>
+                            <td>{{ $employe->sexe }}</td>
+                            <td>{{ $employe->numMat }}</td>
+                            <td>{{ $employe->poste }}</td>
+                            <td>{{ $employe->agence }}</td>
+                            <td>{{ $employe->contrat }}</td>
+                            <td><a href="{{route('employe.show',['id' => $employe->id ])}}" class=" btn btn-info">Voir</a></td>
+                            <td><a href="{{route('employe.edit',['id' => $employe->id ])}}" class=" btn btn-warning">Modifier</a></td>
+                            <td><a href="{{route('employe.destroy',['id' => $employe->id ])}}" class="btn btn-danger">Supprimer</a></td>
+                        </tr>
                     @endforeach
                 </tbody>
             </table>

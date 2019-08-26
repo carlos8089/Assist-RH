@@ -37,11 +37,11 @@ Route::get('/parametres', 'parametresController@page')->name('parametres');
 
 Route::get('/users', 'UtilisateursController@page')->name('utilisateurs');
 
+Route::get('/fiche/supprimer', 'ficheController@supprimerPage')->name('supBulletin');
+
 Route::resource('bulletin', 'bulletinController');
 
 Route::resource('employe', 'employeController');
-
-Route::get('employe/liste', 'personnelController@lister')->name('employe.lister');
 
 Route::resource('User', 'UserController');
 

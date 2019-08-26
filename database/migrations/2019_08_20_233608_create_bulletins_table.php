@@ -15,6 +15,8 @@ class CreateBulletinsTable extends Migration
     {
         Schema::create('bulletins', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('nomEmploye', 100)->nullable()->default('text');
+            $table->string('prenomEmploye', 100)->nullable()->default('text');
             $table->integer('numCNSS')->unsigned()->nullable()->default(12);
             $table->smallInteger('anciennete')->nullable()->default(12);
             $table->string('libelleContrat', 100)->nullable()->default('text');
@@ -39,6 +41,9 @@ class CreateBulletinsTable extends Migration
             $table->double('cotisationMutuelle', 5, 2)->nullable()->default(0.00);
             $table->integer('pretImmobilier')->unsigned()->nullable()->default(12);
             $table->double('TS', 5, 2)->nullable()->default(0.00);
+
+            $table->string('typePaiement', 100)->nullable()->default('text');
+            $table->string('banque', 100)->nullable()->default('text');
             $table->timestamps();
         });
     }

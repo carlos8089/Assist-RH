@@ -28,7 +28,7 @@
                 </form>
             </div>
             <div class="col-3">
-                        <a href="{{route('employe.lister')}}" id="liste" class="btn btn-primary">Liste des salariés</a>
+                        <a href="{{route('employe.index')}}" id="liste" class="btn btn-primary">Liste des salariés</a>
             </div> 
         </div>
     </div>

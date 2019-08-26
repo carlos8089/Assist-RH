@@ -10,7 +10,7 @@
 <div class="container">
     <div class="row">
         <div class="col-3">
-                    <a href="{{route('User.create')}}"  class="btn btn-primary" >Créer un nouveau salarié</a>
+                    <a href="{{route('User.create')}}"  class="btn btn-primary" >Créer un utilsateur</a>
         </div>
         <div class="col-6">
         <form action="{{route('User.index')}}" method="POST">
@@ -28,7 +28,7 @@
             </form>
         </div>
         <div class="col-3">
-                    <a href="{{route('User.index')}}" id="liste" class="btn btn-primary">Liste des salariés</a>
+                   <a href="{{route('User.index')}}" id="liste" class="btn btn-primary">Liste des utilisateurs</a> 
         </div> 
     </div>
 </div>
@@ -39,20 +39,20 @@
     <table class=" table table-striped table-hover">
         <thead class="thead-dark">
             <tr>
-                <td>Id</td>
+                
                 <td>Nom</td>
                 <td>E-mail</td>
-                <td>Mot de passe</td>
+                
                 
             </tr>
         </thead>
         <tbody>
             @foreach ($users as $user)
             <tr>
-                    <td>{{ $user->id }}</td>
+                   
                     <td>{{ $user->name  }}</td>
                     <td>{{ $user->email }}</td>
-                    <td>{{ $user->password }}</td>
+                    
                     
                     <td><a href="{{route('User.show',['id' => $user->id ])}}" class="btn btn-info">Voir</a></td>
                     <td><a href="{{route('User.edit',['id' => $user->id ])}}" class=" btn btn-warning">Modifier</a></td>

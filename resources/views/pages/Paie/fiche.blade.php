@@ -22,10 +22,10 @@
                         <a id="create_bulletin" class="btn btn-primary a" role="button" href="{{route('bulletin.create')}}"> Créer un nouveau bulletin </a>
                 </div>
                 <div class="col-5">
-                        <a id="create_bulletin" class="btn btn-primary a" role="button" href="{{route('personnel')}}">Editer un bulletin existant</a>
+                        <a id="create_bulletin" class="btn btn-primary a" role="button" href="{{route('bulletin.index')}}">Editer un bulletin existant</a>
                 </div>
                 <div class="col-5">
-                        <a id="create_bulletin" class="btn btn-primary a" role="button" href="{{route('personnel')}}">Supprimer un bulletin</a>
+                        <a id="create_bulletin" class="btn btn-primary a" role="button" href="{{route('supBulletin')}}">Supprimer un bulletin</a>
                 </div>
 
             </div>

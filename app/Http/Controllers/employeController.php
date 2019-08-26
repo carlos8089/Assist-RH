@@ -20,7 +20,7 @@ class employeController extends Controller
     {
         $employes = employe::orderBy('id')->get();
         
-        return view('pages.Personnel.personnelPage', compact('employes')); 
+        return view('pages.Personnel.listeEmploye', compact('employes')); 
     }
 
     /**
@@ -54,7 +54,8 @@ class employeController extends Controller
     public function show($id)
     {
        $employes = employe::where('id',$id)->get();
-       return view('pages.Personnel.voirEmploye', compact($employes));
+
+       return view('pages.Personnel.voirEmploye', compact('employes'));
     }
 
     /**
@@ -66,7 +67,7 @@ class employeController extends Controller
     public function edit($id)
     {
        $employes = employe::where('id',$id)->get();
-       return view('pages.Personnel.editEmploye', compact($employes));
+       return view('pages.Personnel.editEmploye', compact('employes'));
     }
 
     /**
@@ -108,6 +109,7 @@ class employeController extends Controller
     public function destroy($id)
     {
         employe::where('id',$id)->delete();
+        
         return redirect()->route('employe.index');
     }
 }
