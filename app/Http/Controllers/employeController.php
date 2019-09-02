@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\View\View;
-use App\Http\Requests\EmployeRequest; 
+use App\Http\Requests\EmployeRequest;
+use App\Http\Requests\employeResearch; 
 
 use App\Models\employe;
 
@@ -112,5 +113,39 @@ class employeController extends Controller
         
         return redirect()->route('employe.index');
     }
+
+    public function getPrimes($id)
+    {
+        $primes = Categorie::where('id',$id)->get();
+        
+        /*
+        $salaireBase = $primes->salaireDeBase;
+        $primeAnciennete = $primes->primeAnciennte;
+        $primeCaisse = $primes->primeCaisse;
+        $primeResponsabilite = $primes->primeResponsabilite;
+        $indemniteLogement = $primes->primeLogement;
+        $indemniteRepresentation = $primes->indemniteRpresentation;
+        $primeHabillement = $primes->primeHabillement;
+        $primeDeplacement = $primes->primeDeplacement;
+        $primeEncouragement = $primes->primeEncouragement;
+        $primeSante = $primes->primeSante;
+        $primeTerrain = $primes->primeTerrain;
+        $primeJourFerie = $primes->primeJourFerie;
+        $primeSemestrielle = $primes->primeSemestrielle;
+        $primeOuvertureCompte = $primes->primesOuvertureCompte;
+       
+        
+
+        $data = [ $salaireBase, $primeAnciennete, $primeCaisse, $primeResponsabilite,
+                $indemniteLogement, $indemniteRepresentation, $primeHabillement, $primeDeplacement;
+                $primeEncouragement, $primeSante, $primeTerrain, $primeJourFerie, $primeSemestrielle,
+                $primeOuvertureCompte
+            ];
+        */
+
+        return $primes;
+    }
+
+   
 }
 ?>

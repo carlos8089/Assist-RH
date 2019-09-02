@@ -27,11 +27,21 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 //mes routes
 
-Route::get('/', 'HomeController@index' );
+Route::get('/', 'vueController@show' );
 
 Route::get('/fiche', 'ficheController@page')->name('fiche');
 
 Route::get('/personnel', 'personnelController@page')->name('personnel');
+
+Route::get('/personnel/find/{nomEmploye}', 'personnelController@find');
+
+/*
+Route::get('/personnel/find/{nomEmploye}', function () {
+    return 'bonjour'.request('nomEmploye');
+});
+*/
+
+Route::resource('employe', 'employeController');
 
 Route::get('/parametres', 'parametresController@page')->name('parametres');
 
@@ -41,8 +51,7 @@ Route::get('/fiche/supprimer', 'ficheController@supprimerPage')->name('supBullet
 
 Route::resource('bulletin', 'bulletinController');
 
-Route::resource('employe', 'employeController');
-
 Route::resource('User', 'UserController');
 
+Route::get('/bulletin/pdf','paiePdfController@printPDF');
 

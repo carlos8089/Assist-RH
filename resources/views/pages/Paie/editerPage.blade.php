@@ -8,6 +8,9 @@
     </style>
         
     <div class="container">
+        <div class=" header">
+            <h4>Liste des bulletins</h4>
+        </div>
         <table class=" table table-striped table-hover">
             <thead class="thead-dark">
                 <tr>

@@ -53,11 +53,13 @@
                     <td>{{ $user->name  }}</td>
                     <td>{{ $user->email }}</td>
                     
-                    
-                    <td><a href="{{route('User.show',['id' => $user->id ])}}" class="btn btn-info">Voir</a></td>
-                    <td><a href="{{route('User.edit',['id' => $user->id ])}}" class=" btn btn-warning">Modifier</a></td>
-                    <td><a href="{{route('User.destroy',['id' => $user->id ])}}" class=" btn btn-danger">Supprimer</a></td>
-                    
+                    <td>
+                        <form class="row" action=" {{ route('User.destroy',['id'=>$user->id]) }} " onsubmit="return confirm('Voulez-vous vraiment supprimer l\'élément ? ')" >
+                            <a href="{{route('User.show',['id' => $user->id ])}}" class="btn btn-info">Voir</a>
+                            <a href="{{route('User.edit',['id' => $user->id ])}}" class=" btn btn-warning">Modifier</a>
+                            <button type="submit" class="btn btn-danger btn-margin">Supprimer</button>
+                        </form>
+                    </td>
             </tr>
                
             @endforeach

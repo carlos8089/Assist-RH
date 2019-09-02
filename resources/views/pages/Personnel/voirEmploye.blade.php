@@ -84,7 +84,7 @@
                                 .row{
                                               margin: 5px;
                                 }
-                        </style>
+                            </style>
                             <h4>Identité</h4>
                             <form class="form-horizontal" action="" method="">
     
@@ -136,7 +136,7 @@
                                 </div>     
                             </form>
                                         
-                                    </section>
+                        </section>
                                     <section>
                                         <h4>Situation sociale</h4>
                                         <form class="form-horizontal">

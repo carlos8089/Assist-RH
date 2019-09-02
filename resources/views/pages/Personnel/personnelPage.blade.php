@@ -13,14 +13,14 @@
                         <a href="{{route('employe.create')}}"  class="btn btn-primary" >Créer un nouveau salarié</a>
             </div>
             <div class="col-6">
-            <form action="{{route('employe.index')}}" method="POST">
+            <form action="{{ URL::to('personnel/find/{nomEmploye}') }}" method="GET">
                     @csrf
                     <div class="row">
                         <div class="col-8">
-                            <input class="form-control" type="text" placeholder="nom / numero matricule" id="rechercherInput" name="inpRechercher">
+                            <input class="form-control" type="text" placeholder="nom / numero matricule" id="nomEmploye" name="nomEmploye">
                         </div>
                         <div class="col-">
-                            <input  type="submit" class="btn btn-warning" value="Rechercher">
+                            <button  type="submit" class="btn btn-info">Rechercher</button>
                         </div>     
                                
                     </div>
@@ -54,10 +54,17 @@
                         <td>{{ $employe->prenoms }}</td>
                         <td>{{ $employe->poste }}</td>
                         <td>{{ $employe->agence  }}</td>
-
-                        <td><a href="{{route('employe.show', ['id' => $employe->id ])}}" class="btn btn-info">Voir</a></td>
-                        <td><a href="{{route('employe.edit', ['id' => $employe->id ])}}" class=" btn btn-warning">Modifier</a></td>
-                        <td><a href="{{route('employe.destroy', ['id' => $employe->id ])}}" class=" btn btn-danger">Supprimer</a></td>
+                        
+                        <td>
+                            <form class="row" action=" {{ route('employe.destroy',[$employe->id])}} " onsubmit="return confirm('Voulez-vous vraiment supprimer ?')">
+                                <a href="{{route('employe.show', ['id' => $employe->id ])}}" class="btn btn-info">Voir</a>
+                                <a href="{{route('employe.edit', ['id' => $employe->id ])}}" class=" btn btn-warning">Modifier</a>
+                                <button class="btn btn-danger" type="submit"><i class="nav-icon fa fa-trash-o"></i>Supprimer</button>
+                            </form>
+                        </td>
+                    
+                        
+                        
                     </tr>
                 @endforeach
             </tbody>

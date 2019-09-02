@@ -31,7 +31,7 @@ class CreateEmployesTable extends Migration
             $table->string('agence', 100)->nullable();
             $table->string('contrat', 100)->nullable()->default('CDI');
 
-            $table->string('dateEmbauche', 100)->nullable()->format('dd/mm/yyyy');
+            $table->timestamp('dateEmbauche')->default(DB::raw('CURRENT_TIMESTAMP'));
             
             $table->timestamps();
         });

@@ -5,6 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 use App\Models\bulletin;
+use App\Http\Requests\BulletinRequest;
+
+use PDF;
+
+use App\Http\Controllers\employeController;
+use App\Models\employe;
 
 class ficheController extends Controller
 {
@@ -22,4 +28,6 @@ class ficheController extends Controller
 
         return view('pages.Paie.supBulletinPage', compact('bulletins'));
     }
+
+    
 }

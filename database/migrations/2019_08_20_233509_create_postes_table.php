@@ -16,6 +16,7 @@ class CreatePostesTable extends Migration
         Schema::create('postes', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('libellePoste', 100)->nullable()->default('text')->index();
+            $table->integer('categorie_id');
             $table->timestamps();
         });
     }

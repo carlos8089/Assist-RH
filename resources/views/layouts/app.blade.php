@@ -17,15 +17,19 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <div class="col-6">
-                    <form action={{route('personnel')}}>
-                        <div class="row">
-                            <div class="col-8">
-                                <input class="form-control" type="text" placeholder="nom / numero matricule" id="rechercherInput">
-                            </div>     
-                            <input  type="submit" class="btn" value="Rechercher">
+                <form action="{{ URL::to('personnel/find/{nomEmploye}') }}" method="GET">
+                    @csrf
+                    <div class="row">
+                        <div class="col-8">
+                            <input class="form-control" type="text" placeholder="nom / numero matricule" id="nomEmploye" name="nomEmploye">
                         </div>
-                        
-                    </form>
+                        <div class="col-">
+                            <input  type="submit" class="btn btn-dark" value="Rechercher">
+                        </div>     
+                               
+                    </div>
+                                                
+                </form>
                 </div>
         <ul class="navbar-nav ml-auto">
             

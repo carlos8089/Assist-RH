@@ -7,6 +7,7 @@ use Illuminate\View\View;
 use App\Http\Requests\BulletinRequest; 
 
 use App\Models\bulletin;
+use App\Models\employe;
 
 class bulletinController extends Controller
 {
@@ -31,7 +32,9 @@ class bulletinController extends Controller
      */
     public function create()
     {
-        return view('pages.Paie.creerBulletin');
+        $employes = employe::orderBy('id')->get();
+
+        return view('pages.Paie.creerBulletin', compact('employes'));
     }
 
     /**
@@ -40,16 +43,17 @@ class bulletinController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(BulletinRequest $request)
+    public function store(BulletinRequest $request, $id)
     {
-        bulletin::create($request->all());
+        $categorie = employe::categorie()->get();
+        bulletin::create($request->['salaireDeBase'=>$categorie->salaireDeBase]);
 
         return redirect()->route('fiche');
     }
 
     /**
      * Display the specified resource.
-     *
+     *                             
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
@@ -57,7 +61,7 @@ class bulletinController extends Controller
     {
         $bulletin = bulletin::where('id', $id)->get();
 
-        return response(view('pages.Paie.voirBulletin'),206)->header('Content-Type','application/pdf');
+        return response(view('pages.Paie.voirBulletin'),206)->header('Content-Type','application/pdf; charset=utf-8');
     }
 
     /**

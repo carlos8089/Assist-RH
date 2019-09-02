@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\employe;
 
 class bulletin extends Model
 {
@@ -17,4 +18,8 @@ class bulletin extends Model
     protected $hidden = [
         'created_at','updated_at'
     ];
+
+    public function employe(){
+        return $this->belongsTo(employe::class);
+    }
 }
