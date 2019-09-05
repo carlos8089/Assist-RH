@@ -16,20 +16,20 @@ class Categories extends Migration
         Schema::create('categories', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nomCategorie', 100)->nullable()->default('text');
-            $table->bigInteger('salaireDeBase')->nullable()->default(12);
-            $table->bigInteger('primeAnciennete')->nullable()->default(12);
-            $table->bigInteger('primeCaisse')->nullable()->default(12);
-            $table->bigInteger('primeResponsabilite')->nullable()->default(12);
-            $table->integer('indemniteLogement')->unsigned()->nullable()->default(12);
-            $table->integer('indemniteRepresentation')->unsigned()->nullable()->default(12);
-            $table->integer('primeHabillement')->unsigned()->nullable()->default(12);
-            $table->integer('primeDeplacement')->unsigned()->nullable()->default(12);
-            $table->integer('primeEncouragement')->unsigned()->nullable()->default(12);
-            $table->integer('primeSante')->unsigned()->nullable()->default(12);
-            $table->integer('primeTerrain')->unsigned()->nullable()->default(12);
-            $table->integer('primeJourFerie')->unsigned()->nullable()->default(12);
-            $table->integer('primeSemestrielle')->unsigned()->nullable()->default(12);
-            $table->integer('primeOuvertureCompte')->unsigned()->nullable()->default(12);
+            $table->bigInteger('categorie_salaireDeBase')->nullable()->default(12);
+            $table->bigInteger('categorie_primeAnciennete')->nullable()->default(12);
+            $table->bigInteger('categorie_primeCaisse')->nullable()->default(12);
+            $table->bigInteger('categorie_primeResponsabilite')->nullable()->default(12);
+            $table->integer('categorie_indemniteLogement')->unsigned()->nullable()->default(12);
+            $table->integer('categorie_indemniteRepresentation')->unsigned()->nullable()->default(12);
+            $table->integer('categorie_primeHabillement')->unsigned()->nullable()->default(12);
+            $table->integer('categorie_primeDeplacement')->unsigned()->nullable()->default(12);
+            $table->integer('categorie_primeEncouragement')->unsigned()->nullable()->default(12);
+            $table->integer('categorie_primeSante')->unsigned()->nullable()->default(12);
+            $table->integer('categorie_primeTerrain')->unsigned()->nullable()->default(12);
+            $table->integer('categorie_primeJourFerie')->unsigned()->nullable()->default(12);
+            $table->integer('categorie_primeSemestrielle')->unsigned()->nullable()->default(12);
+            $table->integer('categorie_primeOuvertureCompte')->unsigned()->nullable()->default(12);
             $table->timestamps();
         });
     }

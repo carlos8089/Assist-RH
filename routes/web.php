@@ -35,12 +35,6 @@ Route::get('/personnel', 'personnelController@page')->name('personnel');
 
 Route::get('/personnel/find/{nomEmploye}', 'personnelController@find');
 
-/*
-Route::get('/personnel/find/{nomEmploye}', function () {
-    return 'bonjour'.request('nomEmploye');
-});
-*/
-
 Route::resource('employe', 'employeController');
 
 Route::get('/parametres', 'parametresController@page')->name('parametres');
@@ -48,6 +42,8 @@ Route::get('/parametres', 'parametresController@page')->name('parametres');
 Route::get('/users', 'UtilisateursController@page')->name('utilisateurs');
 
 Route::get('/fiche/supprimer', 'ficheController@supprimerPage')->name('supBulletin');
+
+Route::get('/fiche/crerer', 'ficheController@creationPage')->name('creationBulletin');
 
 Route::resource('bulletin', 'bulletinController');
 

@@ -15,7 +15,7 @@ class UtilisateursController extends Controller
     public function page()
     {
         
-        $users = User::orderBy('id')->get();
+        $users = User::orderBy('id')->paginate(10);
 
         return view('pages.Profils.profils',compact('users'));
     }

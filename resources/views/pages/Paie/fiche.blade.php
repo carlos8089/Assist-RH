@@ -19,7 +19,7 @@
             <br>
             <div class="col">
                 <div class="col-5">
-                        <a id="create_bulletin" class="btn btn-primary a" role="button" href="{{route('bulletin.create')}}"> Créer un nouveau bulletin </a>
+                        <a id="create_bulletin" class="btn btn-primary a" role="button" href="{{route('creationBulletin')}}"> Créer un nouveau bulletin </a>
                 </div>
                 <div class="col-5">
                         <a id="create_bulletin" class="btn btn-primary a" role="button" href="{{route('bulletin.index')}}">Editer un bulletin existant</a>

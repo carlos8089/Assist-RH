@@ -24,7 +24,7 @@ class EmployeRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            
         ];
     }
 }

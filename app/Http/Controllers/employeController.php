@@ -19,7 +19,7 @@ class employeController extends Controller
      */
     public function index() : View
     {
-        $employes = employe::orderBy('id')->get();
+        $employes = employe::orderBy('id')->paginate(10);
         
         return view('pages.Personnel.listeEmploye', compact('employes')); 
     }

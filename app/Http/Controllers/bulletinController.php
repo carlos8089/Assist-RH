@@ -30,11 +30,15 @@ class bulletinController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-        $employes = employe::orderBy('id')->get();
+        //récupéré l'employé
+        $employes = employe::where('id',$id)->get();
 
-        return view('pages.Paie.creerBulletin', compact('employes'));
+         //récupéré la categorie de l'employé
+         $categorie = $employe->categorie();
+
+        return view('pages.Paie.createBulletin', compact(['employes','actegories']));
     }
 
     /**
@@ -45,8 +49,29 @@ class bulletinController extends Controller
      */
     public function store(BulletinRequest $request, $id)
     {
-        $categorie = employe::categorie()->get();
-        bulletin::create($request->['salaireDeBase'=>$categorie->salaireDeBase]);
+        
+        $employes = employe::where('id',$id)->first();
+
+       
+
+        //créer un bulletin en remplissant les champs de formulaires avec les données de catégorie
+        
+
+        $bulletin = new bulletin;
+            $bulletin->salaireDeBase = $categorie->categorie_salaireDeBase;
+            $bulletin->primeCaisse = $categorie->categorie_primeCaisse;
+            $bulletin->primeResponsabilite = $categorie->categorie_primeResponsabilite;
+            $bulletin->indemniteLogement = $categorie->categorie_indemniteLogement;
+            $bulletin->indemniteRepresentation = $categorie->categorie_indemniteRepresentation;
+            $bulletin->primeHabillement = $categorie->categorie_primeHabillement;
+            $bulletin->primeDeplacement = $categorie->categorie_primeDeplacement;
+            $bulletin->primeEncouragement = $categorie->categorie_primeEncouragement;
+            $bulletin->primeSante = $categorie->categorie_primeSante;
+            $bulletin->primeTerrain = $ategorie_primeTerrain;
+            $bulletin->primeJourFerie = $categorie->categorie_primeJourFerie;
+            $bulletin->primeSemestrielle = $categorie->categorie_primeSemestrielle;
+            $bulletin->primeOuvertureCompte = $categorie->categorie_primeOuvertureCompte ;
+        $bulletin->save();
 
         return redirect()->route('fiche');
     }

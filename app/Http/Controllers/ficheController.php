@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\View\View;
 use App\Models\bulletin;
 use App\Http\Requests\BulletinRequest;
+use App\Models\employe;
 
 use PDF;
 
@@ -29,5 +30,9 @@ class ficheController extends Controller
         return view('pages.Paie.supBulletinPage', compact('bulletins'));
     }
 
+    public function creationPage(){
+        $employes = employes::get();
+        return view('pages.Paie.creerBulletin',compact('employes'));
+    }
     
 }

@@ -12,7 +12,7 @@ class personnelController extends Controller
 {
     //Affichage la page de festion du personnel
     public function page(){
-        $employes = employe::orderBy('id')->get();
+        $employes = employe::orderBy('id')->paginate(10);
 
         return view('pages.Personnel.personnelPage', compact('employes'));
     }

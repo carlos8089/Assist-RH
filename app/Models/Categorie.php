@@ -9,9 +9,9 @@ use App\Models\poste;
 class Categorie extends Model
 {
     protected $fillable = [
-        'nomCategorie','salaireDeBase','primeCaisse','primeResponsabilite','indemniteLogement',
-        'indemniteRepresentation','primeHabillement','primeDeplacement','primeEncouragement','primeSante',
-        'primeTerrain','primeJourFerie','primeSemestrielle','primeOuvertureCompte'
+        'nomCategorie','categorie_salaireDeBase','categorie_primeCaisse','categorie_primeResponsabilite','categorie_indemniteLogement',
+        'categorie_indemniteRepresentation','categorie_primeHabillement','categorie_primeDeplacement','categorie_primeEncouragement','categorie_primeSante',
+        'categorie_primeTerrain','categorie_primeJourFerie','categorie_primeSemestrielle','categorie_primeOuvertureCompte'
     ];
         
     public function employes(){

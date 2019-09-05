@@ -43,6 +43,7 @@
                     @endforeach
                 </tbody>
             </table>
+            {{ $employes->links() }}
         </div>
     </div>
 @endsection

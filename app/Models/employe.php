@@ -7,6 +7,7 @@ use App\Models\Categorie;
 use App\Models\bulletin;
 use App\Models\poste;
 use App\Models\contrat;
+use App\Models\upload;
 
 
 class employe extends Model
@@ -17,11 +18,16 @@ class employe extends Model
         'agence','contrat','dateEmbauche'
     ];
 
+    protected $hidden = [
+        'created_at','updated_at'
+    ];
+
     // renvoie tous les bulletin associées à l'employe
     public function bulletins(){
         return $this->hasMany(bulletin::class);
     }
 
+    //renoie la categorie à laquelle appartient l'employe
     public function categorie(){
         return $this->belongsTo(Categorie::class);
     }
@@ -34,7 +40,10 @@ class employe extends Model
         return $this->belongsTo(poste::class);
     }
 
-    protected $hidden = [
-        'created_at','updated_at'
-    ];
+    //renvoie la photo de l'employe
+    public function photo(){
+        return $this->hasOne(upload::class);
+    }
+
+    
 }
