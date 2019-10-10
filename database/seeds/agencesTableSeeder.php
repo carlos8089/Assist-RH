@@ -12,10 +12,30 @@ class agencesTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('categories')->insert([
-            'nomAgence'=>Str::random(10);
-            'addrAgence'=>Str::random(10);
-            'numTelAgence'=>rand(10);
-        ])
+        DB::table('agences')->insert([
+            'nomAgence' => 'Siege',
+            'addrAgence' => 'Agoe',
+            'numTelAgence' => 90181797
+        ]);
+        DB::table('agences')->insert([
+            'nomAgence' => 'Kegue',
+            'addrAgence' => 'Kegue',
+            'numTelAgence' => 90181797
+        ]);
+        DB::table('agences')->insert([
+            'nomAgence' => 'Tsevie',
+            'addrAgence' => 'Tsevie',
+            'numTelAgence' => 90181797
+        ]);
+        DB::table('agences')->insert([
+            'nomAgence' => 'Adidogome',
+            'addrAgence' => 'Adidogome',
+            'numTelAgence' => 90181797
+        ]);
+        DB::table('agences')->insert([
+            'nomAgence' => 'Avepozo',
+            'addrAgence' => 'Avepozo',
+            'numTelAgence' => 90181797
+        ]);
     }
 }

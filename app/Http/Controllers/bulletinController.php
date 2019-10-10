@@ -111,9 +111,7 @@ class bulletinController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $nomEmploye = $request->nomEmploye;
-        $prenomEmploye = $request->prenomEmploye;
-        $numCNSS = $request->numCNSS;
+       
         $primeSante = $request->primeSante;
         $lieuNais = $request->lieuNais;
         $sitMat =$request->sitMat;
@@ -125,11 +123,12 @@ class bulletinController extends Controller
         $agence = $request->agence;
         $dateEmbauche = $request->dateEmbauche;
 
-        bulletin::where('id',$id)->update(['nomEmploye'=>$nomEmploye , 'prenomEmploye'=>$prenomEmploye , 'numCNSS'=>$numCNSS , 'primeSante'=>$primeSante ,
+        bulletin::where('id',$id)->update(['primeSante'=>$primeSante ,
         'lieuNais'=>$lieuNais , 'sitMat'=>$sitMat , 'nbEnfant'=>$nbEnfant , 'addr'=>$addr , 'numMat'=>$numMat ,
         'poste'=>$poste , 'contrat'=>$contrat , 'agence'=>$agence , 'dateEmbauche'=>$dateEmbauche]);
 
-        return redirect()->route('bulletin.sow', ['id' => $id]);
+        dd($primeSante);
+        
     }
 
     /**

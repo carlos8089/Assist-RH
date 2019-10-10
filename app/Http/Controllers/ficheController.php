@@ -11,7 +11,7 @@ use App\Models\employe;
 use PDF;
 
 use App\Http\Controllers\employeController;
-use App\Models\employe;
+
 
 class ficheController extends Controller
 {
@@ -31,7 +31,7 @@ class ficheController extends Controller
     }
 
     public function creationPage(){
-        $employes = employes::get();
+        $employes = employe::get();
         return view('pages.Paie.creerBulletin',compact('employes'));
     }
     

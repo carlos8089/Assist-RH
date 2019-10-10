@@ -97,24 +97,6 @@
                 </div>
             </div>
         </div>
-            
-                
-            
-            <div class="form-group">
-                    <div class="row">
-                            <div class="col-6">
-                                    <div class="row">
-                                            <div class="col-6">
-                                                <label for="">Salaire de base</label>  
-                                            </div>
-                                            <div class="col-6">
-                                                <input class="form-control" type="number" name="salaireDeBase" id="salaireDeBase">
-        <div class="card">
-            <div class=" card-header">
-               <h4>Liste des employés</h4>
-            </div>
-            <div class=" card-body">
-                
                 
                 <div class="form-group">
                             <div class="row">
