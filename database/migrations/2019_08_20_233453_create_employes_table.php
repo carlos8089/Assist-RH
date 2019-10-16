@@ -27,9 +27,9 @@ class CreateEmployesTable extends Migration
             $table->string('addr', 100)->nullable();
 
             $table->string('numMat', 100)->unique();
-            $table->string('poste', 100)->nullable();
-            $table->string('agence', 100)->nullable();
-            $table->string('contrat', 100)->nullable()->default('CDI');
+            $table->smallInteger('poste_id')->nullable();
+            $table->smallInteger('agence_id')->nullable();
+            $table->smallInteger('contrat_id')->nullable();
 
             $table->timestamp('dateEmbauche')->default(DB::raw('CURRENT_TIMESTAMP'));
             

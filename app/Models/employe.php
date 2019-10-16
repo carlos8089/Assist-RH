@@ -40,6 +40,10 @@ class employe extends Model
         return $this->belongsTo(poste::class);
     }
 
+    public function agence(){
+        return $this->belongsTo(employe::class);
+    }
+    
     //renvoie la photo de l'employe
     public function photo(){
         return $this->hasOne(upload::class);

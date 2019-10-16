@@ -13,11 +13,11 @@
                     <a href="{{route('User.create')}}"  class="btn btn-primary" >Créer un utilsateur</a>
         </div>
         <div class="col-6">
-        <form action="{{route('User.index')}}" method="POST">
+        <form action="{{ URL::to('user/find/{username}')}}" method="get">
                 @csrf
                 <div class="row">
                     <div class="col-8">
-                        <input class="form-control" type="text" placeholder="nom / numero matricule" id="rechercherInput" name="inpRechercher">
+                        <input class="form-control" type="text" placeholder="nom d'utilisateur" id="username" name="username">
                     </div>
                     <div class="col-">
                         <input  type="submit" class="btn btn-info" value="Rechercher">

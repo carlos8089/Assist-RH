@@ -18,7 +18,11 @@ class Categorie extends Model
         return $this->hasMany(employe::class);
     }
 
-    public function postes(){
-        return $this->hasMany(poste::class);
+    public function toutpostes(){
+        return $this->hasMany('App\Models\poste','id');
+    }
+    public function postes($id){
+        //retourne les postes pour la catégorie sélectionnée
+        return poste::whereCategorieId($id)->get();
     }
 }

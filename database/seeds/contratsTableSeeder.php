@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use DB;
+use Illuminate\Support\Facades\DB;
 
 class contratsTableSeeder extends Seeder
 {
@@ -12,8 +12,14 @@ class contratsTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('categories')->insert([
-            'libelleContrat'=>Str::random(10);
-        ])
+        DB::table('contrats')->insert([
+            'libelleContrat'=> 'CDI'
+        ]);
+        DB::table('contrats')->insert([
+            'libelleContrat'=> 'Essai'
+        ]);
+        DB::table('contrats')->insert([
+            'libelleContrat'=> 'Stage'
+        ]);
     }
 }

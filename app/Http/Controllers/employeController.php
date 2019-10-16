@@ -7,7 +7,12 @@ use Illuminate\View\View;
 use App\Http\Requests\EmployeRequest;
 use App\Http\Requests\employeResearch; 
 
+use App\Models\Categorie;
 use App\Models\employe;
+use App\Models\agence;
+use App\Models\contrat;
+use App\Models\poste;
+
 
 
 class employeController extends Controller
@@ -31,7 +36,12 @@ class employeController extends Controller
      */
     public function create()
     {
-        return view('pages.Personnel.createEmploye');
+        $categories = Categorie::all();
+        $contrats = contrat::all();
+        $agences = agence::all();
+        $postes = poste::all();
+
+        return view('pages.Personnel.createEmploye',compact('categories','contrats','agences','postes'));
     }
 
     /**
@@ -43,7 +53,7 @@ class employeController extends Controller
     public function store(EmployeRequest $request)
     {
        employe::create($request->all());
-       return redirect()->route('personnel');
+       return redirect()->route('personnel')->with('success','Enregistrement effectué !');
     }
 
     /**
@@ -68,7 +78,9 @@ class employeController extends Controller
     public function edit($id)
     {
        $employes = employe::where('id',$id)->get();
-       return view('pages.Personnel.editEmploye', compact('employes'));
+       $postes = poste::all();
+       $agences = agence::all();
+       return view('pages.Personnel.editEmploye', compact('employes','postes','agences'));
     }
 
     /**
@@ -82,21 +94,18 @@ class employeController extends Controller
     {
         $nom = $request->nom;
         $prenom = $request->prenom;
-        $sexe = $request->sexe;
-        $dateNais = $request->dateNais;
-        $lieuNais = $request->lieuNais;
+    
         $sitMat =$request->sitMat;
         $nbEnfant = $request->nbEnfant;
         $addr = $request->addr;
         $numMat = $request->numMat;
         $poste = $request->poste;
-        $contrat = $request->contrat;
+        
         $agence = $request->agence;
-        $dateEmbauche = $request->dateEmbauche;
+        
 
-        employe::where('id',$id)->update(['nom'=>$nom , 'prenom'=>$prenom , 'sexe'=>$sexe , 'dateNais'=>$dateNais ,
-        'lieuNais'=>$lieuNais , 'sitMat'=>$sitMat , 'nbEnfant'=>$nbEnfant , 'addr'=>$addr , 'numMat'=>$numMat ,
-        'poste'=>$poste , 'contrat'=>$contrat , 'agence'=>$agence , 'dateEmbauche'=>$dateEmbauche]);
+        employe::where('id',$id)->update(['nom'=>$nom , 'prenom'=>$prenom , 'sitMat'=>$sitMat , 'nbEnfant'=>$nbEnfant , 'addr'=>$addr , 'numMat'=>$numMat ,
+        'poste'=>$poste , 'agence'=>$agence ]);
 
         return redirect()->route('employe.sow', ['id' => $id]);
     }
@@ -109,43 +118,11 @@ class employeController extends Controller
      */
     public function destroy($id)
     {
-        employe::where('id',$id)->delete();
+        $employe = employe::find($id);
         
+        $employe->delete();
         return redirect()->route('employe.index');
     }
-
-    public function getPrimes($id)
-    {
-        $primes = Categorie::where('id',$id)->get();
-        
-        /*
-        $salaireBase = $primes->salaireDeBase;
-        $primeAnciennete = $primes->primeAnciennte;
-        $primeCaisse = $primes->primeCaisse;
-        $primeResponsabilite = $primes->primeResponsabilite;
-        $indemniteLogement = $primes->primeLogement;
-        $indemniteRepresentation = $primes->indemniteRpresentation;
-        $primeHabillement = $primes->primeHabillement;
-        $primeDeplacement = $primes->primeDeplacement;
-        $primeEncouragement = $primes->primeEncouragement;
-        $primeSante = $primes->primeSante;
-        $primeTerrain = $primes->primeTerrain;
-        $primeJourFerie = $primes->primeJourFerie;
-        $primeSemestrielle = $primes->primeSemestrielle;
-        $primeOuvertureCompte = $primes->primesOuvertureCompte;
-       
-        
-
-        $data = [ $salaireBase, $primeAnciennete, $primeCaisse, $primeResponsabilite,
-                $indemniteLogement, $indemniteRepresentation, $primeHabillement, $primeDeplacement;
-                $primeEncouragement, $primeSante, $primeTerrain, $primeJourFerie, $primeSemestrielle,
-                $primeOuvertureCompte
-            ];
-        */
-
-        return $primes;
-    }
-
    
 }
 ?>

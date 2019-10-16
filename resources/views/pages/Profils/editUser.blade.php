@@ -13,7 +13,7 @@
 
     <div class="container">
          @foreach ($users as $user)
-            <form action="{{route('User.update', $user->id)}}" method="PUT" id="form">
+            <form action="{{route('User.update', ['id'=>$user->id])}}" method="PUT" id="form">
                 <div class="row">
                     <div class="col-3"><label for="name">Nom d'utilisateur</label></div>
                     <div class="col-8">

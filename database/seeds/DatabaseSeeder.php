@@ -14,9 +14,14 @@ class DatabaseSeeder extends Seeder
     
         public function run()
         {
-            for ($i = 1; $i < 11; $i++) {
-                DB::table('employes')->insert(['nom' => 'Country ' . $i, 'numMat' => Str::random(4)]);
-            }
+            $this->call([
+                agencesTableSeeder::class,
+                categoriesTableSeeder::class,
+                contratsTableSeeder::class,
+                employesTableSeeder::class,
+                postesTableSeeder::class,
+            ]);
+            
             
         }
 

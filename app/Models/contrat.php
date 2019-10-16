@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class contrat extends Model
 {
-    protected $fillable = 'libelleContrat';
+    //protected $fillable = 'libelleContrat';
 
     public function employes(){
         return $this->hasMany(employe::class);

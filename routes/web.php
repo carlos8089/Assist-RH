@@ -35,6 +35,8 @@ Route::get('/personnel', 'personnelController@page')->name('personnel');
 
 Route::get('/personnel/find/{nomEmploye}', 'personnelController@find');
 
+Route::get('/user/find/{username}','UtilisateursController@find');
+
 Route::resource('employe', 'employeController');
 
 Route::get('/parametres', 'parametresController@page')->name('parametres');
@@ -43,7 +45,9 @@ Route::get('/users', 'UtilisateursController@page')->name('utilisateurs');
 
 Route::get('/fiche/supprimer', 'ficheController@supprimerPage')->name('supBulletin');
 
-Route::get('/fiche/crerer', 'ficheController@creationPage')->name('creationBulletin');
+Route::get('/fiche/creer', 'ficheController@creationPage')->name('creationBulletin');
+Route::get('/fiche/creer/2', 'ficheController@creationPage2')->name('bulletinPage2');
+Route::get('/fiche/creer/3/{id}', 'ficheController@creationPage3')->name('bulletinPage3');
 
 Route::resource('bulletin', 'bulletinController');
 

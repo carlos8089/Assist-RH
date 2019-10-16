@@ -85,10 +85,15 @@ class UserController extends Controller
     public function update(ProfilRequest $request, $id)
     {
         $nom = $request->nom;
+        echo $nom;
 
-       User::where('id',$id)->update(['password'=>$password]);
+      /* User::where('id',$id)->update([
+           'name'=>$nom,
+           'password'=>$password
+           ]);
 
-        return redirect()->route('user.sow', ['id' => $id]);
+        return redirect()->route('ListeProfils');
+        */
     }
 
     /**

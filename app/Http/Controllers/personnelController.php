@@ -24,5 +24,6 @@ class personnelController extends Controller
 
         return view('pages.Personnel.rechercheEmploye',compact('employes'));
     }
+    
    
 }

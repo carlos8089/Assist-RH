@@ -18,11 +18,8 @@ class bulletinController extends Controller
      */
     public function index()
     {
-        
         $bulletins = bulletin::orderBy('id')->get();
-
         return view('pages.Paie.editerPage', compact('bulletins'));
-
     }
 
     /**
@@ -30,15 +27,9 @@ class bulletinController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create($id)
+    public function create()
     {
-        //récupéré l'employé
-        $employes = employe::where('id',$id)->get();
-
-         //récupéré la categorie de l'employé
-         $categorie = $employe->categorie();
-
-        return view('pages.Paie.createBulletin', compact(['employes','actegories']));
+        return view('pages.Paie.createBulletin');
     }
 
     /**
@@ -47,33 +38,74 @@ class bulletinController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(BulletinRequest $request, $id)
+    public function store(BulletinRequest $request)
     {
         
-        $employes = employe::where('id',$id)->first();
+        //if ($request->nature = "manuel") {
+            /*Retrouver l'employé qui est saisie
+                $nomEmploye = $_POST['nom'];
+                $employes = employe::where('nom',$nomEmploye)->first();
 
-       
+            //Créer le bulletin affecté à cet employé
+                $bulletin = new bulletin;
+                    $bulletin->employe_id = $employes->id;
+                    $bulletin->salaireDeBase = $request->salaireDeBase;
+                    $bulletin->primeAnciennete = $request->primeAnciennete ;
+                    $bulletin->primeCaisse = $request->primeCaisse ;
+                    $bulletin->primeResponsabilite = $request->primeResponsabilite ;
+                    $bulletin->indemniteLogement = $request->indemniteLogement ;
+                    $bulletin->indemniteRepresentation = $request->indemniteRepresentation ;
+                    $bulletin->primeHabillement = $request->primeHabillement ;
+                    $bulletin->primeDeplacement = $request->primeDeplacement ;
+                    $bulletin->primeEncouragement = $request->primeEncouragement ;
+                    $bulletin->primeSante = $request->primeSante ;
+                    $bulletin->primeTerrain = $request->primeTerrain ;
+                    $bulletin->primeJourFerie = $request->primeJourFerie ;
+                    $bulletin->primeSemestrielle = $request->primeSemestrielle ;
+                    $bulletin->primeOuvertureCompte = $request->primeOuvertureCompte ;
+                    $bulletin->CNSS = $request->CNSS ;
+                    $bulletin->IRPP = $request->IRPP ;
+                    $bulletin->TCS = $request->TCS ;
+                    $bulletin->cotisationMutuelle = $request->cotisationMutuelle ;
+                    $bulletin->pretImmobilier = $request->pretImmobilier ;
+                    $bulletin->TS = $request->TS ;
+                    $bulletin->typePaiement = $request->typePaiement ;
+                    $bulletin->banque = $request->banque ;
+                $bulletin->save(); */
+        //}
+        if ($request->nature = "automatique") {
+            
+            //echo $request->employe_id;
 
-        //créer un bulletin en remplissant les champs de formulaires avec les données de catégorie
-        
+            //Créer le bulletin affecté à cet employé
+           $bulletin = new bulletin;
+                $bulletin->employe_id = $request->employe_id;
+                $bulletin->salaireDeBase = $request->salaireDeBase;
+                $bulletin->primeAnciennete = $request->primeAnciennete ;
+                $bulletin->primeCaisse = $request->primeCaisse ;
+                $bulletin->primeResponsabilite = $request->primeResponsabilite ;
+                $bulletin->indemniteLogement = $request->indemniteLogement ;
+                $bulletin->indemniteRepresentation = $request->indemniteRepresentation ;
+                $bulletin->primeHabillement = $request->primeHabillement ;
+                $bulletin->primeDeplacement = $request->primeDeplacement ;
+                $bulletin->primeEncouragement = $request->primeEncouragement ;
+                $bulletin->primeSante = $request->primeSante ;
+                $bulletin->primeTerrain = $request->primeTerrain ;
+                $bulletin->primeJourFerie = $request->primeJourFerie ;
+                $bulletin->primeSemestrielle = $request->primeSemestrielle ;
+                $bulletin->primeOuvertureCompte = $request->primeOuvertureCompte ;
+                $bulletin->CNSS = $request->CNSS ;
+                $bulletin->IRPP = $request->IRPP ;
+                $bulletin->TCS = $request->TCS ;
+                $bulletin->cotisationMutuelle = $request->cotisationMutuelle ;
+                $bulletin->pretImmobilier = $request->pretImmobilier ;
+                $bulletin->TS = $request->TS ;
+                $bulletin->typePaiement = $request->typePaiement ;
+                $bulletin->banque = $request->banque ;
+            $bulletin->save(); 
+        }
 
-        $bulletin = new bulletin;
-            $bulletin->salaireDeBase = $categorie->categorie_salaireDeBase;
-            $bulletin->primeCaisse = $categorie->categorie_primeCaisse;
-            $bulletin->primeResponsabilite = $categorie->categorie_primeResponsabilite;
-            $bulletin->indemniteLogement = $categorie->categorie_indemniteLogement;
-            $bulletin->indemniteRepresentation = $categorie->categorie_indemniteRepresentation;
-            $bulletin->primeHabillement = $categorie->categorie_primeHabillement;
-            $bulletin->primeDeplacement = $categorie->categorie_primeDeplacement;
-            $bulletin->primeEncouragement = $categorie->categorie_primeEncouragement;
-            $bulletin->primeSante = $categorie->categorie_primeSante;
-            $bulletin->primeTerrain = $ategorie_primeTerrain;
-            $bulletin->primeJourFerie = $categorie->categorie_primeJourFerie;
-            $bulletin->primeSemestrielle = $categorie->categorie_primeSemestrielle;
-            $bulletin->primeOuvertureCompte = $categorie->categorie_primeOuvertureCompte ;
-        $bulletin->save();
-
-        return redirect()->route('fiche');
+       return redirect()->route('fiche');
     }
 
     /**

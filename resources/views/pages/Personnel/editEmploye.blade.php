@@ -27,44 +27,7 @@
                                 </div>
                             </div>
                         </div>
-                            
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col-2">
-                                    <label for="sexe" class="control-label ">Sexe</label>
-                                </div>   
-                                            
-                                <div class="col-10">
-                                    <label for="sexeM" class="control-label">Masculin</label><input type="radio" name="sexeM" id="sexeM" value="M">
-                                    <label for="sexeF" class="control-label">Féminin</label><input type="radio" name="sexF" id="sexeF" value="F" checked>
-                                </div>
-                            </div>
-                        </div>
-                            
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col-1"> <label for="nais">Né(e) le</label> </div>
-                                        
-                                <div class="col-5">
-                                    <input class="form-control" type="date" name="dateNais" id="dateNais" >
-                                </div>
-                            </div>
-                        </div>    
-                            
-                        <div class="form-group">
-                                <div class="row">
-                                        <div class="col-1">
-                                            <label for="lieuNais" class="control-label ">À</label>
-                                        </div>
-                                        <div class="col-5">
-                                            <input  class="form-control" type="text" name="lieuNais" id="lieuNais">
-                                        </div>
-                                    </div> 
-                        </div>
-                                
-                        
-                        
-                    
+    
                         <h4>Situation sociale</h4>
     
                         <div class="form-group">
@@ -103,64 +66,31 @@
                         <div class="form-group">
                             <div class="row">
                                 <div class="col-3">
-                                    <label for="">Numero matricule</label>
+                                    <label for="">Poste</label>
                                 </div>
                                 <div class="col-2">
-                                    <input type="text" name="numMat" id="numMat" class="form-control">
+                                    <select class="form-control" name="poste" id="poste">
+                                        @foreach ($postes as $poste)
+                                            <option value="{{$poste->id}}">{{$poste->libellePoste}}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                             </div>
                         </div>
-
-                    <!--
-                        <div class="form-group">
-                            <div class="row">
-                                        <div class="col-6">
-                                            <div class="row">
-                                                <div class="col-2"><label for="">Poste</label></div>
-                                                <div class="col-8">
-                                                    <select name="poste" id="poste" class="form-control">
-    
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-6">
-                                            <div class="row">
-                                                <div class="col-4"><label for="">Type de contrat</label></div>
-                                                <div class="col-7">
-                                                    <select class="form-control" name="contrat" id="contrat">
-                            
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-                            </div>
-                        </div>
-
-                    -->
                             
                         <div class="form-group">
                             <div class="row">
                                 <div class="col-1"> <label for="">Agence</label> </div>
                                 <div class="col-6">
                                     <select name="agence" id="agence" class="form-control">
-    
+                                        @foreach ($agences as $agence)
+                                            <option value="{{$agence->id}}">{{$agence->nomAgence}}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                                                 
                             </div>
                         </div>
-                            
-                     <!--   <div class="form-group">
-                                <div class="row">
-                                        <div class="col-2"> <label for="">Date d'embauche</label> </div>
-                                        <div class="col-6">
-                                            <input class="form-control" type="date" name="created_at" id="created_at">
-                                        </div>
-                                                
-                                    </div>
-                        </div>
-                    -->    
                        
                     <div class="form-group">
                         <button type="submit" class="btn btn-success"  id="boutonVld">Valider</button>

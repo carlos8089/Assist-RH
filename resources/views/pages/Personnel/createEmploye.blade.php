@@ -19,22 +19,25 @@
         }
     </style>
     <div class="main">
-        <h3>Créer un nouvel employé</h3>
-        <br>
-        <div class="container">
-            <form action="{{route('employe.store')}}" method="POST" class="form-horizontal">
+
+        <div class="card">
+            <div class="card-header">
+                <h3>Créer un nouvel employé</h3>
+            </div>
+            <div class="card-body">
+                <form action="{{route('employe.store')}}" method="POST" class="form-horizontal">
 
                 @csrf
-               
+
                     <h4>Identité</h4>
-                 
+                
                     <div class="form-group">
                         <div class="row">
                             <div class="col-6">
                                 <div class="row">
                                     <div class="col-2"><label for="nom" class="control-label ">Nom</label></div>
                                     <div class="col-10">
-                                        <input class="form-control" type="text" name="nom" id="nom">
+                                        <input class="form-control" type="text" name="nom" id="nom" value="carlos">
                                     </div>
                                 </div>
                             </div>
@@ -56,8 +59,8 @@
                             </div>   
                                         
                             <div class="col-10">
-                                <label for="sexeM" class="control-label">Masculin</label><input type="radio" name="sexeM" id="sexeM" value="M">
-                                <label for="sexeF" class="control-label">Féminin</label><input type="radio" name="sexF" id="sexeF" value="F" checked>
+                                <label for="sexe" class="control-label">Masculin</label><input type="radio" name="sexe" id="sexeM" value="M">
+                                <label for="sexe" class="control-label">Féminin</label><input type="radio" name="sexe" id="sexeF" value="F" checked>
                             </div>
                         </div>
                     </div>
@@ -82,9 +85,6 @@
                                     </div>
                                 </div> 
                     </div>
-                            
-                    
-                    
                 
                     <h4>Situation sociale</h4>
 
@@ -123,13 +123,31 @@
                     <h4>Emploi</h4>
                     <div class="form-group">
                         <div class="row">
-                            <div class="col-3">
-                                <label for="">Numero matricule</label>
+                            <div class="col-6">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <label for="">Numero matricule</label>
+                                    </div>
+                                    <div class="col-3">
+                                        <input type="text" name="numMat" id="numMat" class="form-control">
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-2">
-                                <input type="text" name="numMat" id="numMat" class="form-control">
+                            <div class="col-6">
+                                <div class="row">
+                                <div class="col-4">
+                                        <label for="">Categorie</label>
+                                    </div>
+                                    <div class="col-8">
+                                        <select type="text" name="categorie" id="categorie" class="form-control">
+                                            @foreach($categories as $categorie)
+                                                <option value="{{$categorie->id}}">{{$categorie->nomCategorie}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
+                        </div>                      
                     </div>
                     <div class="form-group">
                         <div class="row">
@@ -138,7 +156,9 @@
                                             <div class="col-2"><label for="">Poste</label></div>
                                             <div class="col-8">
                                                 <select name="poste" id="poste" class="form-control">
-
+                                                    @foreach($postes as $poste)
+                                                        <option value="{{$poste->id}}">{{$poste->libellePoste}}</option>
+                                                    @endforeach
                                                 </select>
                                             </div>
                                         </div>
@@ -148,7 +168,9 @@
                                             <div class="col-4"><label for="">Type de contrat</label></div>
                                             <div class="col-7">
                                                 <select class="form-control" name="contrat" id="contrat">
-                        
+                                                    @foreach($contrats as $contrat)
+                                                        <option value="{{$contrat->id}}">{{$contrat->libelleContrat}}</option>
+                                                    @endforeach
                                                 </select>
                                             </div>
                                         </div>
@@ -161,7 +183,9 @@
                             <div class="col-1"> <label for="">Agence</label> </div>
                             <div class="col-6">
                                 <select name="agence" id="agence" class="form-control">
-
+                                    @foreach($agences as $agence)
+                                        <option value="{{$agence->id}}">{{$agence->nomAgence}}</option>
+                                    @endforeach
                                 </select>
                             </div>
                                             
@@ -169,25 +193,59 @@
                     </div>
                         
                     <div class="form-group">
-                            <div class="row">
-                                    <div class="col-2"> <label for="">Date d'embauche</label> </div>
-                                    <div class="col-6">
-                                        <input class="form-control" type="date" name="dateEmbauche" id="dateEmbauche">
-                                    </div>
+                        <div class="row">
+                            <div class="col-2"> <label for="">Date d'embauche</label> </div>
+                            <div class="col-6">
+                                <input class="form-control" type="date" name="dateEmbauche" id="dateEmbauche">
+                            </div>
                                             
-                                </div>
+                        </div>
                     </div>
-                       
-                   
+                    
+            </div>
+            <div class="card-footer">
                 <div class="form-group">
                     <button type="submit" class="btn btn-success"  id="boutonVld">Valider</button>
                 </div>
-    
-                
-            </form>
+            </div>
+                </form>
+                        
         </div>
-    
+        
     </div>
+
+    <script>
+    $(function(){
+        //selection de la catégorie
+        $('#categorie').val(id).prop('selected',true);
+
+        //synchronistaion des postes
+        posteUpdate(categorie_id);
+
+        //changement de categorie
+        $('#categorie').on('change',function(e){
+            var categorie_id = e.target.value;
+            poste_id = false;
+            posteUpdate(categorie_id);
+        })
+
+        //requête ajax pour les villes
+        function posteUpdate(categorieId){
+            $.get('{{ url('postes') }}/'+categorieId+"'", function(data){
+                $('#poste').empty();
+                $.each(data, function(index, postes){
+                    $('#poste').append($('<option>',{
+                        value: postes.id,
+                        text: postes.libellePoste
+                    }));
+                });
+                if(poste_id){
+                    $('#poste').val(poste_id).prop('selected',true);
+                }
+            });
+        }
+    });
+    </script>
 @endsection
 @section('element2')
     
